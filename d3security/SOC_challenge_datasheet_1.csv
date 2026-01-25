@@ -1,0 +1,345 @@
+event_id,timestamp_utc,source,event_type,severity,confidence,user,host_or_asset,src_ip,dest_ip,dest_domain,action,outcome,message,entity,is_external_src_ip
+EVT-00001,2026-01-19T16:02:21Z,EmailGateway,URL.Rewrite,Informational,0.51,v.ali,DB-109,192.168.249.40,10.29.31.192,gmail.com,Inbound,Delivered,Security-relevant event observed.,user,0
+EVT-00002,2026-01-19T16:06:40Z,Firewall,Connection.Denied,Informational,0.99,i.clark,CorpNet,192.168.15.24,192.0.2.136,,Network,Blocked,Connection denied by firewall policy.,user,0
+EVT-00003,2026-01-19T16:13:49Z,VPN,VPN.NewDevice,High,0.49,s.nguyen,MAIL-093,172.20.222.46,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00004,2026-01-19T16:14:56Z,Okta,Login.Success,Low,0.57,k.brown,AWS,10.78.255.239,,,Auth,Success,User authenticated successfully.,user,0
+EVT-00005,2026-01-19T16:15:27Z,O365,File.Download,Informational,0.7,e.wilson,AWS,192.0.2.75,,,Access,Success,Security-relevant event observed.,user,1
+EVT-00006,2026-01-19T16:22:15Z,AzureAD,Signin.Failed,Low,0.78,r.kim,CorpNet,192.168.111.120,,,Auth,Failure,Cloud sign-in failed.,user,0
+EVT-00007,2026-01-19T16:31:42Z,DNS,TXT.Query,Low,0.23,t.jones,DC-033,192.0.2.7,,jira.corp.local,Query,Resolved,Security-relevant event observed.,user,1
+EVT-00008,2026-01-19T16:32:03Z,Proxy,Upload,Low,0.5,e.wilson,LAP-068,192.0.2.161,198.51.100.128,slack.com,GET,Allowed,Upload via web proxy.,user,1
+EVT-00009,2026-01-19T16:42:21Z,DNS,DGA.Suspected,Informational,0.57,k.brown,WS-191,172.27.10.87,,okta.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00010,2026-01-19T16:45:46Z,Proxy,Download,Medium,0.58,g.thomas,MAIL-140,10.97.146.92,198.51.100.222,office.com,GET,Allowed,File downloaded via web proxy.,user,0
+EVT-00011,2026-01-19T16:48:25Z,Proxy,Download,Informational,0.26,t.jones,DC-179,10.69.32.184,203.0.113.10,intranet.corp.local,POST,Allowed,File downloaded via web proxy.,user,0
+EVT-00012,2026-01-19T16:48:44Z,Proxy,Upload,Low,0.66,e.wilson,VDI-069,10.49.43.172,203.0.113.207,microsoft.com,GET,Allowed,Upload via web proxy.,user,0
+EVT-00013,2026-01-19T16:48:48Z,CloudTrail,IAM.PolicyChange,Informational,0.56,a.chen,O365,192.168.84.239,,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00014,2026-01-19T16:49:36Z,Firewall,C2.Connection,Informational,0.34,m.patel,AWS,10.70.130.75,203.0.113.31,,Network,Blocked,Security-relevant event observed.,user,0
+EVT-00015,2026-01-19T16:56:59Z,AzureAD,ImpossibleTravel,High,0.83,b.harris,AWS,192.0.2.218,10.82.139.116,,Auth,Success,Security-relevant event observed.,user,1
+EVT-00016,2026-01-19T17:03:21Z,EDR,LateralMovement.Suspected,Informational,0.66,l.garcia,SRV-148,203.0.113.202,,,Endpoint,Observed,Security-relevant event observed.,user,1
+EVT-00017,2026-01-19T17:11:22Z,DNS,Query,Informational,0.54,i.clark,WS-039,192.168.155.22,,microsoft.com,Query,Resolved,DNS query observed.,user,0
+EVT-00018,2026-01-19T17:16:25Z,EmailGateway,URL.Rewrite,Informational,0.31,f.robinson,API-170,192.0.2.231,,corp.local,Inbound,Delivered,Security-relevant event observed.,user,1
+EVT-00019,2026-01-19T17:17:33Z,Okta,Login.Success,Informational,0.63,p.singh,O365,192.168.215.94,,,Auth,Success,User authenticated successfully.,user,0
+EVT-00020,2026-01-19T17:21:55Z,Okta,Login.Success,Low,0.61,c.taylor,CorpNet,203.0.113.242,,,Auth,Success,User authenticated successfully.,user,1
+EVT-00021,2026-01-19T17:22:20Z,DNS,HighEntropy.Subdomain,Low,0.81,s.nguyen,WS-167,198.51.100.249,10.85.208.125,intranet.corp.local,Query,Resolved,Security-relevant event observed.,user,1
+EVT-00022,2026-01-19T17:25:02Z,VPN,SplitTunnel.Enabled,Informational,0.69,n.davis,MAIL-182,172.19.207.6,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00023,2026-01-19T17:26:12Z,DNS,NXDOMAIN,Low,0.69,b.harris,DB-083,172.25.156.115,,slack.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00024,2026-01-19T17:28:14Z,Proxy,URL.Allowed,Informational,0.89,j.smith,SRV-071,192.168.166.98,192.0.2.136,zoom.us,GET,Allowed,Web request allowed.,user,0
+EVT-00025,2026-01-19T17:34:39Z,Proxy,Upload,Low,0.73,k.brown,DC-146,172.26.14.127,203.0.113.47,slack.com,POST,Allowed,Upload via web proxy.,user,0
+EVT-00026,2026-01-19T17:35:53Z,CloudTrail,S3.GetObject,Medium,0.6,p.singh,AWS,172.25.80.183,,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00027,2026-01-19T17:36:08Z,VPN,VPN.NewDevice,Informational,0.45,c.taylor,LAP-128,198.51.100.27,,,Auth,Success,Security-relevant event observed.,user,1
+EVT-00028,2026-01-19T17:43:51Z,Proxy,Download,Low,0.6,e.wilson,API-040,172.18.46.213,198.51.100.24,slack.com,POST,Allowed,File downloaded via web proxy.,user,0
+EVT-00029,2026-01-19T17:50:12Z,AzureAD,Token.Anomaly,Medium,0.58,f.robinson,AWS,10.205.224.60,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00030,2026-01-19T17:50:17Z,AzureAD,ImpossibleTravel,Low,0.69,f.robinson,Azure,10.60.144.30,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00031,2026-01-19T17:51:18Z,O365,File.ShareExternal,Low,0.4,svc-ci,AWS,192.0.2.201,192.168.219.170,office.com,Access,Success,Security-relevant event observed.,service_account,1
+EVT-00032,2026-01-19T17:51:38Z,EDR,Malware.Detected,Informational,0.67,p.singh,API-155,10.235.63.250,,,Endpoint,Detected,Malware detection on endpoint.,user,0
+EVT-00033,2026-01-19T17:52:03Z,VPN,SplitTunnel.Enabled,Informational,0.79,d.miller,DC-123,10.26.129.241,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00034,2026-01-19T17:53:09Z,AzureAD,Signin.Failed,High,0.62,r.kim,CorpNet,10.179.188.30,,,Auth,Failure,Cloud sign-in failed.,user,0
+EVT-00035,2026-01-19T18:04:28Z,Proxy,Upload,Informational,0.19,g.thomas,API-153,172.19.178.91,203.0.113.159,office.com,POST,Allowed,Upload via web proxy.,user,0
+EVT-00036,2026-01-19T18:06:41Z,Okta,Password.Reset,High,0.05,m.patel,O365,192.168.89.31,10.5.83.128,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00037,2026-01-19T18:13:05Z,EDR,USB.Mount,Low,0.33,f.robinson,DC-017,172.16.123.184,172.16.180.62,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00038,2026-01-19T18:15:00Z,AzureAD,Signin.Failed,Medium,0.78,n.davis,Azure,203.0.113.77,,,Auth,Failure,Multiple failed sign-in attempts from single IP; user agent indicates legacy authentication.,user,1
+EVT-00039,2026-01-19T18:17:00Z,AzureAD,Signin.Failed,Medium,0.78,s.nguyen,Azure,203.0.113.77,,,Auth,Failure,Multiple failed sign-in attempts from single IP; user agent indicates legacy authentication.,user,1
+EVT-00040,2026-01-19T18:19:00Z,AzureAD,Signin.Failed,Medium,0.78,e.wilson,Azure,203.0.113.77,,,Auth,Failure,Multiple failed sign-in attempts from single IP; user agent indicates legacy authentication.,user,1
+EVT-00041,2026-01-19T18:19:12Z,EDR,LateralMovement.Suspected,High,0.44,m.patel,API-054,192.168.52.91,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00042,2026-01-19T18:20:40Z,EDR,LateralMovement.Suspected,Low,0.48,s.nguyen,WS-119,192.168.221.211,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00043,2026-01-19T18:21:00Z,AzureAD,Signin.Failed,Medium,0.78,l.garcia,Azure,203.0.113.77,,,Auth,Failure,Multiple failed sign-in attempts from single IP; user agent indicates legacy authentication.,user,1
+EVT-00044,2026-01-19T18:23:00Z,AzureAD,Signin.Failed,Medium,0.78,g.thomas,Azure,203.0.113.77,,,Auth,Failure,Multiple failed sign-in attempts from single IP; user agent indicates legacy authentication.,user,1
+EVT-00045,2026-01-19T18:25:00Z,AzureAD,Signin.Failed,Medium,0.78,m.patel,Azure,203.0.113.77,,,Auth,Failure,Multiple failed sign-in attempts from single IP; user agent indicates legacy authentication.,user,1
+EVT-00046,2026-01-19T18:27:00Z,AzureAD,Signin.Failed,Medium,0.78,f.robinson,Azure,203.0.113.77,,,Auth,Failure,Multiple failed sign-in attempts from single IP; user agent indicates legacy authentication.,user,1
+EVT-00047,2026-01-19T18:27:59Z,Proxy,Upload,Medium,0.26,c.taylor,MAIL-085,172.20.153.83,192.0.2.243,okta.com,GET,Allowed,Upload via web proxy.,user,0
+EVT-00048,2026-01-19T18:28:13Z,VPN,VPN.Failed,Critical,0.56,m.patel,DB-098,172.26.172.195,,,Auth,Failure,VPN authentication failed.,user,0
+EVT-00049,2026-01-19T18:29:00Z,AzureAD,Signin.Failed,Medium,0.78,o.martin,Azure,203.0.113.77,,,Auth,Failure,Multiple failed sign-in attempts from single IP; user agent indicates legacy authentication.,user,1
+EVT-00050,2026-01-19T18:29:46Z,DNS,NXDOMAIN,Informational,0.28,r.kim,LAP-136,192.168.84.113,,zoom.us,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00051,2026-01-19T18:32:43Z,Proxy,TLS.SNI.Mismatch,Medium,0.78,j.smith,VDI-142,192.168.145.200,192.0.2.7,office.com,GET,Allowed,Security-relevant event observed.,user,0
+EVT-00052,2026-01-19T18:33:00Z,AzureAD,Signin.Success,High,0.83,j.smith,Azure,203.0.113.77,,,Auth,Success,Successful sign-in after multiple failures; conditional access not triggered (legacy protocol).,user,1
+EVT-00053,2026-01-19T18:35:30Z,O365,Mailbox.ForwardingSet,Low,0.76,m.patel,Azure,192.0.2.106,,sharepoint.com,Access,Success,Security-relevant event observed.,user,1
+EVT-00054,2026-01-19T18:36:00Z,O365,Mailbox.ForwardingSet,High,0.86,j.smith,O365,203.0.113.77,,,Mailbox,Success,Mailbox forwarding rule created to external recipient 'auditbackup@proton.me'.,user,1
+EVT-00055,2026-01-19T18:40:56Z,VPN,VPN.Connect,Low,0.41,k.brown,DC-090,203.0.113.14,,,Auth,Success,VPN session established.,user,1
+EVT-00056,2026-01-19T18:42:40Z,AzureAD,Role.Assignment,Low,0.89,r.kim,O365,203.0.113.42,,,Auth,Success,Security-relevant event observed.,user,1
+EVT-00057,2026-01-19T18:43:40Z,Firewall,C2.Connection,Medium,0.47,v.ali,AWS,192.168.250.24,192.0.2.115,,Network,Blocked,Security-relevant event observed.,user,0
+EVT-00058,2026-01-19T18:54:44Z,EmailGateway,Attachment.Blocked,Informational,0.31,f.robinson,DC-009,10.187.185.99,,outlook.com,Inbound,Quarantined,Security-relevant event observed.,user,0
+EVT-00059,2026-01-19T18:57:39Z,Okta,Login.Success,Informational,0.7,d.miller,AWS,10.37.175.44,,,Auth,Success,User authenticated successfully.,user,0
+EVT-00060,2026-01-19T19:00:21Z,Proxy,Category.Block,Low,0.21,n.davis,VDI-139,192.0.2.52,192.0.2.80,slack.com,GET,Allowed,Security-relevant event observed.,user,1
+EVT-00061,2026-01-19T19:05:20Z,AzureAD,ImpossibleTravel,Low,0.58,g.thomas,O365,10.158.115.207,10.23.125.252,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00062,2026-01-19T19:09:09Z,Okta,Password.Reset,High,0.54,c.taylor,O365,192.168.135.157,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00063,2026-01-19T19:10:09Z,CloudTrail,CloudWatch.AlarmDisabled,Informational,0.61,k.brown,AWS,198.51.100.61,,,Cloud,Success,Security-relevant event observed.,user,1
+EVT-00064,2026-01-19T19:10:32Z,Okta,MFA.Challenge,Informational,0.43,b.harris,CorpNet,198.51.100.205,,,Auth,Success,MFA challenge initiated.,user,1
+EVT-00065,2026-01-19T19:17:31Z,VPN,SplitTunnel.Enabled,Informational,0.36,t.jones,DC-012,192.168.121.249,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00066,2026-01-19T19:21:49Z,EmailGateway,User.ReportedPhish,Low,0.64,c.taylor,VDI-002,10.228.136.245,,vendor.example,Inbound,Delivered,Security-relevant event observed.,user,0
+EVT-00067,2026-01-19T19:24:35Z,AzureAD,Signin.Success,Informational,0.59,g.thomas,O365,192.168.10.100,,,Auth,Success,Cloud sign-in successful.,user,0
+EVT-00068,2026-01-19T19:25:36Z,Proxy,Upload,Low,0.45,g.thomas,SRV-016,172.18.88.11,198.51.100.182,okta.com,GET,Allowed,Upload via web proxy.,user,0
+EVT-00069,2026-01-19T19:25:44Z,Firewall,Connection.Denied,Low,0.55,m.patel,CorpNet,192.168.71.185,198.51.100.168,,Network,Blocked,Connection denied by firewall policy.,user,0
+EVT-00070,2026-01-19T19:27:19Z,EmailGateway,User.ReportedPhish,Medium,0.3,j.smith,VDI-165,10.25.170.63,,outlook.com,Inbound,Delivered,Security-relevant event observed.,user,0
+EVT-00071,2026-01-19T19:27:37Z,Proxy,TLS.SNI.Mismatch,Medium,0.2,n.davis,WS-134,192.0.2.176,192.0.2.241,microsoft.com,GET,Allowed,Security-relevant event observed.,user,1
+EVT-00072,2026-01-19T19:28:23Z,EDR,LateralMovement.Suspected,Low,0.4,n.davis,SRV-106,172.31.31.181,10.166.244.135,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00073,2026-01-19T19:29:12Z,Firewall,GeoIP.Block,Informational,0.33,e.wilson,O365,198.51.100.76,198.51.100.93,,Network,Blocked,Security-relevant event observed.,user,1
+EVT-00074,2026-01-19T19:33:07Z,CloudTrail,CloudWatch.AlarmDisabled,Medium,0.7,g.thomas,CorpNet,172.29.227.126,192.168.15.204,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00075,2026-01-19T19:34:17Z,Proxy,Upload,Medium,0.64,i.clark,VDI-128,192.168.172.66,203.0.113.248,okta.com,GET,Allowed,Upload via web proxy.,user,0
+EVT-00076,2026-01-19T19:36:24Z,VPN,VPN.Disconnect,Low,0.56,svc-ci,LAP-150,10.11.33.51,,,Auth,Success,Security-relevant event observed.,service_account,0
+EVT-00077,2026-01-19T19:37:15Z,Firewall,Connection.Denied,Critical,0.47,b.harris,AWS,172.16.57.238,203.0.113.225,,Network,Blocked,Connection denied by firewall policy.,user,0
+EVT-00078,2026-01-19T19:38:46Z,Proxy,Category.Block,Informational,0.57,v.ali,SRV-081,198.51.100.200,198.51.100.125,github.com,GET,Allowed,Security-relevant event observed.,user,1
+EVT-00079,2026-01-19T19:42:22Z,O365,File.ShareExternal,Informational,0.44,g.thomas,CorpNet,10.47.216.213,,onedrive.com,Access,Success,Security-relevant event observed.,user,0
+EVT-00080,2026-01-19T19:46:16Z,AzureAD,Signin.Failed,Critical,0.57,c.taylor,Azure,192.0.2.1,,,Auth,Failure,Cloud sign-in failed.,user,1
+EVT-00081,2026-01-19T19:50:53Z,EmailGateway,User.ReportedPhish,Low,0.44,it-admin,DC-195,172.17.81.17,,outlook.com,Inbound,Delivered,Security-relevant event observed.,privileged_user,0
+EVT-00082,2026-01-19T19:52:49Z,Okta,Login.Failed,High,0.44,p.singh,AWS,203.0.113.73,192.168.154.157,,Auth,Failure,Authentication failed (bad credentials or policy).,user,1
+EVT-00083,2026-01-19T19:59:20Z,EmailGateway,User.ReportedPhish,High,0.4,r.kim,DC-192,203.0.113.107,,vendor.example,Outbound,Delivered,Security-relevant event observed.,user,1
+EVT-00084,2026-01-19T20:05:00Z,Okta,Login.Success,Low,0.6,m.patel,CorpNet,198.51.100.33,,,Auth,Success,"Login from Vancouver, CA; known device.",user,1
+EVT-00085,2026-01-19T20:07:03Z,Okta,MFA.Failed,High,0.79,a.chen,AWS,10.216.67.123,172.18.52.27,,Auth,Failure,MFA denied or timed out.,user,0
+EVT-00086,2026-01-19T20:10:02Z,EmailGateway,Outbound.Spam,Low,0.08,i.clark,WS-196,172.17.89.121,,proton.me,Inbound,Delivered,Security-relevant event observed.,user,0
+EVT-00087,2026-01-19T20:10:03Z,EDR,Malware.Detected,Medium,0.37,c.taylor,LAP-132,192.168.248.55,,,Endpoint,Detected,Malware detection on endpoint.,user,0
+EVT-00088,2026-01-19T20:14:16Z,VPN,VPN.NewDevice,Medium,0.51,e.wilson,DC-163,198.51.100.95,,,Auth,Success,Security-relevant event observed.,user,1
+EVT-00089,2026-01-19T20:17:00Z,AzureAD,ImpossibleTravel,High,0.88,m.patel,Azure,203.0.113.120,,,Auth,Success,"Sign-in from Frankfurt, DE within 12 minutes of Vancouver sign-in; device fingerprint mismatch.",user,1
+EVT-00090,2026-01-19T20:18:48Z,Firewall,DataTransfer.Large,Low,0.71,i.clark,O365,192.0.2.162,203.0.113.43,,Network,Blocked,Security-relevant event observed.,user,1
+EVT-00091,2026-01-19T20:23:24Z,Proxy,TLS.SNI.Mismatch,Informational,0.93,m.patel,VDI-148,203.0.113.91,198.51.100.46,slack.com,POST,Allowed,Security-relevant event observed.,user,1
+EVT-00092,2026-01-19T20:27:44Z,Firewall,GeoIP.Block,Medium,0.81,a.chen,Azure,192.168.4.244,203.0.113.1,,Network,Blocked,Security-relevant event observed.,user,0
+EVT-00093,2026-01-19T20:28:55Z,AzureAD,Signin.Success,Medium,0.29,f.robinson,AWS,192.168.161.240,,,Auth,Success,Cloud sign-in successful.,user,0
+EVT-00094,2026-01-19T20:31:10Z,EmailGateway,Attachment.Blocked,High,0.69,c.taylor,API-049,203.0.113.132,,corp.local,Inbound,Quarantined,Security-relevant event observed.,user,1
+EVT-00095,2026-01-19T20:35:40Z,AzureAD,ImpossibleTravel,Informational,0.7,svc-deploy,O365,172.27.235.65,,,Auth,Success,Security-relevant event observed.,service_account,0
+EVT-00096,2026-01-19T20:41:40Z,Proxy,TLS.SNI.Mismatch,Low,0.68,j.smith,LAP-100,192.168.166.220,203.0.113.134,intranet.corp.local,POST,Allowed,Security-relevant event observed.,user,0
+EVT-00097,2026-01-19T20:48:52Z,O365,SharePoint.Access,Informational,0.72,p.singh,AWS,192.168.99.93,,,Access,Success,Security-relevant event observed.,user,0
+EVT-00098,2026-01-19T20:48:57Z,CloudTrail,EC2.SecurityGroupChange,Informational,0.83,i.clark,Azure,192.168.115.166,172.20.36.16,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00099,2026-01-19T20:52:00Z,EmailGateway,Outbound.Spam,Informational,0.49,svc-ci,LAP-035,203.0.113.236,172.20.67.64,proton.me,Outbound,Delivered,Security-relevant event observed.,service_account,1
+EVT-00100,2026-01-19T20:55:00Z,AzureAD,Role.Assignment,Medium,0.61,sec-admin,CorpNet,192.168.137.83,,,Auth,Success,Security-relevant event observed.,privileged_user,0
+EVT-00101,2026-01-19T20:57:12Z,DNS,TXT.Query,Informational,0.54,o.martin,DC-107,192.168.58.89,,cdn.okta.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00102,2026-01-19T20:58:32Z,CloudTrail,S3.PutObject,Low,0.51,o.martin,Azure,172.29.95.175,,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00103,2026-01-19T20:58:39Z,DNS,TXT.Query,Informational,0.19,o.martin,VDI-117,172.22.69.222,172.26.136.211,okta.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00104,2026-01-19T21:03:49Z,EDR,Process.Suspicious,Low,0.62,b.harris,MAIL-104,198.51.100.118,,,Endpoint,Observed,Suspicious process behavior observed.,user,1
+EVT-00105,2026-01-19T21:04:44Z,AzureAD,Signin.Failed,Medium,0.66,d.miller,O365,192.0.2.181,,,Auth,Failure,Cloud sign-in failed.,user,1
+EVT-00106,2026-01-19T21:10:15Z,VPN,VPN.Disconnect,Low,0.42,l.garcia,DB-033,192.168.47.129,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00107,2026-01-19T21:17:15Z,EDR,Exploit.Prevention,Low,0.55,j.smith,API-114,192.168.245.55,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00108,2026-01-19T21:18:46Z,DNS,Query,Informational,0.21,b.harris,VDI-147,192.168.194.44,172.24.252.38,office.com,Query,Resolved,DNS query observed.,user,0
+EVT-00109,2026-01-19T21:19:02Z,EDR,Process.Suspicious,Low,0.41,b.harris,DB-044,192.0.2.191,,,Endpoint,Observed,Suspicious process behavior observed.,user,1
+EVT-00110,2026-01-19T21:20:00Z,Proxy,URL.Allowed,Medium,0.66,r.kim,WS-118,192.168.247.237,,update-chrome-security.com,GET,Allowed,Newly-registered domain; category=Software/Updates; low reputation.,user,0
+EVT-00111,2026-01-19T21:20:13Z,VPN,SplitTunnel.Enabled,Informational,0.82,p.singh,VDI-181,192.168.116.198,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00112,2026-01-19T21:22:00Z,Proxy,Download,High,0.8,r.kim,WS-118,192.168.90.178,,update-chrome-security.com,GET,Allowed,Executable download 'ChromeUpdate.msi' from low-reputation host.,user,0
+EVT-00113,2026-01-19T21:22:20Z,Proxy,Upload,Informational,0.49,t.jones,VDI-034,203.0.113.136,192.0.2.234,github.com,GET,Allowed,Upload via web proxy.,user,1
+EVT-00114,2026-01-19T21:22:41Z,DNS,Query,Low,0.59,s.nguyen,SRV-090,172.22.247.90,,slack.com,Query,Resolved,DNS query observed.,user,0
+EVT-00115,2026-01-19T21:22:52Z,Proxy,Upload,Informational,0.67,h.lee,MAIL-189,192.168.97.88,192.0.2.183,okta.com,POST,Allowed,Upload via web proxy.,user,0
+EVT-00116,2026-01-19T21:23:20Z,Proxy,URL.Blocked,Low,0.55,s.nguyen,SRV-011,203.0.113.206,192.0.2.81,jira.corp.local,GET,Allowed,Web request blocked by policy.,user,1
+EVT-00117,2026-01-19T21:26:00Z,O365,SharePoint.Access,Informational,0.78,j.smith,O365,192.0.2.84,,office.com,Access,Success,Security-relevant event observed.,user,1
+EVT-00118,2026-01-19T21:35:59Z,AzureAD,Role.Assignment,Informational,0.54,d.miller,CorpNet,192.168.155.180,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00119,2026-01-19T21:36:42Z,Okta,MFA.Challenge,Low,0.97,s.nguyen,Azure,172.30.208.27,172.18.166.222,,Auth,Success,MFA challenge initiated.,user,0
+EVT-00120,2026-01-19T21:43:10Z,Firewall,GeoIP.Block,Informational,0.45,r.kim,O365,10.4.234.160,192.0.2.26,,Network,Blocked,Security-relevant event observed.,user,0
+EVT-00121,2026-01-19T21:48:33Z,Firewall,PortScan.Detected,Low,0.37,e.wilson,CorpNet,10.25.148.243,203.0.113.222,,Network,Blocked,Potential port scanning activity detected.,user,0
+EVT-00122,2026-01-19T21:57:29Z,AzureAD,AppConsent.Granted,High,0.43,j.smith,CorpNet,192.168.183.218,192.168.203.56,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00123,2026-01-19T22:01:42Z,EmailGateway,Phish.Detected,Low,0.59,e.wilson,SRV-149,203.0.113.10,172.27.160.112,vendor.example,Inbound,Quarantined,Phishing email detected by gateway.,user,1
+EVT-00124,2026-01-19T22:02:20Z,DNS,NXDOMAIN,High,0.41,j.smith,API-014,10.38.174.155,,slack.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00125,2026-01-19T22:03:41Z,Proxy,URL.Blocked,Informational,0.3,l.garcia,VDI-190,172.23.104.102,198.51.100.142,office.com,GET,Allowed,Web request blocked by policy.,user,0
+EVT-00126,2026-01-19T22:07:36Z,Proxy,URL.Allowed,High,0.6,t.jones,MAIL-164,192.0.2.82,198.51.100.182,slack.com,GET,Allowed,Web request allowed.,user,1
+EVT-00127,2026-01-19T22:11:44Z,Proxy,Category.Block,Low,0.46,e.wilson,WS-133,198.51.100.62,192.0.2.105,microsoft.com,GET,Allowed,Security-relevant event observed.,user,1
+EVT-00128,2026-01-19T22:16:07Z,Proxy,URL.Blocked,Low,0.93,h.lee,DB-043,10.152.148.117,192.0.2.134,slack.com,GET,Allowed,Web request blocked by policy.,user,0
+EVT-00129,2026-01-19T22:16:11Z,EmailGateway,DMARC.Fail,Low,0.65,h.lee,API-179,10.153.192.48,,outlook.com,Inbound,Delivered,Security-relevant event observed.,user,0
+EVT-00130,2026-01-19T22:18:48Z,EmailGateway,Attachment.Blocked,Informational,0.46,svc-backup,LAP-182,192.168.171.115,10.127.34.90,gmail.com,Inbound,Delivered,Security-relevant event observed.,service_account,0
+EVT-00131,2026-01-19T22:22:01Z,Proxy,Download,Informational,0.51,j.smith,DB-008,10.109.113.166,198.51.100.174,zoom.us,GET,Allowed,File downloaded via web proxy.,user,0
+EVT-00132,2026-01-19T22:31:41Z,AzureAD,AppConsent.Granted,High,0.73,it-admin,Azure,172.19.210.113,172.26.6.181,,Auth,Success,Security-relevant event observed.,privileged_user,0
+EVT-00133,2026-01-19T22:39:20Z,O365,File.Download,Low,0.7,f.robinson,CorpNet,10.19.70.183,,,Access,Success,Security-relevant event observed.,user,0
+EVT-00134,2026-01-19T22:39:31Z,EDR,USB.Mount,Low,0.29,a.chen,DB-138,172.24.195.211,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00135,2026-01-19T22:40:00Z,EmailGateway,User.ReportedPhish,Medium,0.72,s.nguyen,LAP-042,10.234.97.184,,secure-o365-auth.com,Inbound,Reported,User reported suspicious email prompting O365 re-authentication.,user,0
+EVT-00136,2026-01-19T22:40:24Z,O365,Mailbox.ForwardingSet,Informational,0.33,h.lee,O365,192.0.2.13,,sharepoint.com,Access,Success,Security-relevant event observed.,user,1
+EVT-00137,2026-01-19T22:41:58Z,DNS,TXT.Query,High,0.6,v.ali,MAIL-087,203.0.113.178,,jira.corp.local,Query,Resolved,Security-relevant event observed.,user,1
+EVT-00138,2026-01-19T22:42:45Z,VPN,VPN.Connect,Low,0.37,svc-backup,LAP-158,172.30.21.116,,,Auth,Success,VPN session established.,service_account,0
+EVT-00139,2026-01-19T22:45:14Z,O365,Admin.AuditLogCleared,Informational,0.55,svc-deploy,CorpNet,192.168.79.227,,,Access,Success,Security-relevant event observed.,service_account,0
+EVT-00140,2026-01-19T22:46:20Z,DNS,Query,Low,0.64,i.clark,SRV-136,172.24.127.246,192.168.95.128,office.com,Query,Resolved,DNS query observed.,user,0
+EVT-00141,2026-01-19T22:47:00Z,EDR,Process.Suspicious,High,0.84,s.nguyen,LAP-042,172.19.212.12,,,Endpoint,Observed,Suspicious PowerShell spawned from Office app; encoded command detected.,user,0
+EVT-00142,2026-01-19T22:49:00Z,EDR,Malware.Detected,Critical,0.92,s.nguyen,LAP-042,192.168.63.198,,,Endpoint,Detected,Known infostealer signature matched; credential access behavior observed.,user,0
+EVT-00143,2026-01-19T22:50:59Z,VPN,VPN.Disconnect,Critical,0.29,s.nguyen,VDI-136,203.0.113.126,,,Auth,Success,Security-relevant event observed.,user,1
+EVT-00144,2026-01-19T22:52:00Z,DNS,HighEntropy.Subdomain,High,0.87,s.nguyen,LAP-042,172.30.68.247,,x9q2k1.l33t-dns.org,Query,Resolved,High-entropy subdomain queries consistent with DNS tunneling.,user,0
+EVT-00145,2026-01-19T22:54:15Z,DNS,TXT.Query,Critical,0.67,m.patel,WS-180,172.29.169.145,,microsoft.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00146,2026-01-19T22:55:28Z,Okta,MFA.Failed,High,0.68,d.miller,CorpNet,192.168.30.157,,,Auth,Failure,MFA denied or timed out.,user,0
+EVT-00147,2026-01-19T22:58:00Z,Firewall,DataTransfer.Large,High,0.81,s.nguyen,CorpNet,10.24.221.215,198.51.100.201,,Network,Allowed,Unusual outbound transfer volume from endpoint to rare external IP.,user,0
+EVT-00148,2026-01-19T22:58:02Z,O365,File.Download,Informational,0.57,p.singh,Azure,203.0.113.72,,onedrive.com,Access,Success,Security-relevant event observed.,user,1
+EVT-00149,2026-01-19T22:58:23Z,AzureAD,Role.Assignment,Medium,0.55,f.robinson,CorpNet,172.28.73.159,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00150,2026-01-19T23:01:47Z,EmailGateway,URL.Rewrite,Informational,0.49,k.brown,WS-082,192.0.2.167,,gmail.com,Inbound,Delivered,Security-relevant event observed.,user,1
+EVT-00151,2026-01-19T23:02:13Z,Proxy,TLS.SNI.Mismatch,High,0.46,f.robinson,SRV-086,192.168.72.235,203.0.113.80,zoom.us,GET,Allowed,Security-relevant event observed.,user,0
+EVT-00152,2026-01-19T23:02:34Z,EmailGateway,URL.Rewrite,Low,0.79,it-admin,WS-092,203.0.113.62,,vendor.example,Inbound,Delivered,Security-relevant event observed.,privileged_user,1
+EVT-00153,2026-01-19T23:10:00Z,CloudTrail,AccessKey.Created,High,0.89,svc-deploy,AWS,192.0.2.44,,,Cloud,Success,New access key created outside change window; source IP not in allowlist.,service_account,1
+EVT-00154,2026-01-19T23:12:48Z,Okta,Policy.Change,High,0.59,d.miller,O365,198.51.100.8,,,Auth,Success,Security-relevant event observed.,user,1
+EVT-00155,2026-01-19T23:12:54Z,AzureAD,AppConsent.Granted,Informational,0.72,svc-deploy,Azure,10.48.0.55,,,Auth,Success,Security-relevant event observed.,service_account,0
+EVT-00156,2026-01-19T23:13:34Z,AzureAD,Signin.Success,Low,0.51,svc-ci,AWS,172.30.90.246,,,Auth,Success,Cloud sign-in successful.,service_account,0
+EVT-00157,2026-01-19T23:14:00Z,CloudTrail,S3.GetObject,Medium,0.74,svc-deploy,AWS,192.0.2.44,,,Cloud,Success,Burst of S3 object reads from sensitive bucket 'finance-exports'.,service_account,1
+EVT-00158,2026-01-19T23:14:08Z,Okta,Policy.Change,Informational,0.7,e.wilson,AWS,172.21.189.227,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00159,2026-01-19T23:14:59Z,EmailGateway,URL.Rewrite,Medium,0.47,it-admin,DC-148,203.0.113.97,,proton.me,Inbound,Delivered,Security-relevant event observed.,privileged_user,1
+EVT-00160,2026-01-19T23:17:00Z,CloudTrail,S3.GetObject,Medium,0.74,svc-deploy,AWS,192.0.2.44,,,Cloud,Success,Burst of S3 object reads from sensitive bucket 'finance-exports'.,service_account,1
+EVT-00161,2026-01-19T23:17:45Z,DNS,TXT.Query,Informational,0.56,e.wilson,MAIL-177,203.0.113.167,,intranet.corp.local,Query,NXDOMAIN,Security-relevant event observed.,user,1
+EVT-00162,2026-01-19T23:17:55Z,EDR,USB.Mount,Medium,0.47,d.miller,DB-084,172.16.188.52,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00163,2026-01-19T23:20:00Z,CloudTrail,S3.GetObject,Medium,0.74,svc-deploy,AWS,192.0.2.44,,,Cloud,Success,Burst of S3 object reads from sensitive bucket 'finance-exports'.,service_account,1
+EVT-00164,2026-01-19T23:23:00Z,CloudTrail,S3.GetObject,Medium,0.74,svc-deploy,AWS,192.0.2.44,,,Cloud,Success,Burst of S3 object reads from sensitive bucket 'finance-exports'.,service_account,1
+EVT-00165,2026-01-19T23:23:52Z,EmailGateway,DMARC.Fail,Informational,0.88,r.kim,VDI-042,198.51.100.226,,proton.me,Inbound,Delivered,Security-relevant event observed.,user,1
+EVT-00166,2026-01-19T23:26:35Z,Firewall,Connection.Denied,Informational,0.33,n.davis,O365,203.0.113.115,203.0.113.97,,Network,Blocked,Connection denied by firewall policy.,user,1
+EVT-00167,2026-01-19T23:26:53Z,O365,File.Download,Low,0.56,svc-backup,O365,192.168.78.184,,,Access,Success,Security-relevant event observed.,service_account,0
+EVT-00168,2026-01-19T23:28:40Z,EDR,Exploit.Prevention,Informational,0.61,o.martin,MAIL-099,192.0.2.252,10.64.169.223,,Endpoint,Observed,Security-relevant event observed.,user,1
+EVT-00169,2026-01-19T23:30:04Z,AzureAD,Signin.Failed,Medium,0.77,t.jones,Azure,172.23.254.234,,,Auth,Failure,Cloud sign-in failed.,user,0
+EVT-00170,2026-01-19T23:38:34Z,Okta,Login.Failed,Medium,0.67,p.singh,O365,192.0.2.153,10.79.80.194,,Auth,Failure,Authentication failed (bad credentials or policy).,user,1
+EVT-00171,2026-01-19T23:40:27Z,Proxy,URL.Blocked,Medium,0.43,o.martin,WS-192,172.23.35.200,192.0.2.11,microsoft.com,GET,Allowed,Web request blocked by policy.,user,0
+EVT-00172,2026-01-19T23:44:22Z,EDR,Exploit.Prevention,Medium,0.64,k.brown,DB-009,172.18.224.222,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00173,2026-01-19T23:44:45Z,EmailGateway,Outbound.Spam,Informational,0.35,c.taylor,API-180,172.24.118.31,,vendor.example,Outbound,Delivered,Security-relevant event observed.,user,0
+EVT-00174,2026-01-19T23:54:00Z,EmailGateway,DMARC.Fail,Informational,0.4,svc-deploy,LAP-114,172.16.23.84,,proton.me,Inbound,Delivered,Security-relevant event observed.,service_account,0
+EVT-00175,2026-01-19T23:54:15Z,Firewall,PortScan.Detected,High,0.43,c.taylor,Azure,203.0.113.179,192.0.2.185,,Network,Blocked,Potential port scanning activity detected.,user,1
+EVT-00176,2026-01-19T23:58:39Z,O365,File.Download,Medium,0.44,n.davis,CorpNet,203.0.113.140,,onedrive.com,Access,Success,Security-relevant event observed.,user,1
+EVT-00177,2026-01-20T00:00:20Z,EDR,USB.Mount,Informational,0.94,d.miller,DB-152,192.168.37.80,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00178,2026-01-20T00:03:12Z,VPN,VPN.Connect,Informational,0.46,s.nguyen,SRV-193,192.168.196.90,,,Auth,Success,VPN session established.,user,0
+EVT-00179,2026-01-20T00:07:44Z,Okta,MFA.Challenge,High,0.51,c.taylor,CorpNet,172.22.122.147,,,Auth,Success,MFA challenge initiated.,user,0
+EVT-00180,2026-01-20T00:10:28Z,Firewall,Connection.Denied,Medium,0.45,l.garcia,Azure,172.18.222.52,192.0.2.38,,Network,Blocked,Connection denied by firewall policy.,user,0
+EVT-00181,2026-01-20T00:11:17Z,VPN,VPN.Connect,Informational,0.74,b.harris,VDI-014,192.168.20.224,192.168.111.123,,Auth,Success,VPN session established.,user,0
+EVT-00182,2026-01-20T00:15:16Z,EDR,USB.Mount,Medium,0.7,v.ali,WS-144,172.16.202.66,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00183,2026-01-20T00:15:35Z,EDR,Exploit.Prevention,Low,0.47,e.wilson,SRV-130,192.0.2.77,,,Endpoint,Observed,Security-relevant event observed.,user,1
+EVT-00184,2026-01-20T00:18:59Z,VPN,VPN.Failed,Informational,0.7,h.lee,DC-028,192.168.183.148,,,Auth,Failure,VPN authentication failed.,user,0
+EVT-00185,2026-01-20T00:21:58Z,Proxy,URL.Blocked,Low,0.61,v.ali,DB-174,10.226.176.253,192.0.2.77,zoom.us,GET,Allowed,Web request blocked by policy.,user,0
+EVT-00186,2026-01-20T00:24:16Z,CloudTrail,S3.PutObject,High,0.38,g.thomas,CorpNet,198.51.100.206,,,Cloud,Success,Security-relevant event observed.,user,1
+EVT-00187,2026-01-20T00:26:05Z,Proxy,URL.Blocked,Informational,0.63,j.smith,SRV-176,192.168.20.56,203.0.113.38,microsoft.com,POST,Allowed,Web request blocked by policy.,user,0
+EVT-00188,2026-01-20T00:34:28Z,EmailGateway,Phish.Detected,Medium,0.69,a.chen,LAP-004,10.30.203.130,,corp.local,Inbound,Delivered,Phishing email detected by gateway.,user,0
+EVT-00189,2026-01-20T00:39:35Z,Okta,Login.Failed,Low,0.72,sec-admin,O365,192.168.30.233,,,Auth,Failure,Authentication failed (bad credentials or policy).,privileged_user,0
+EVT-00190,2026-01-20T00:40:59Z,EDR,LateralMovement.Suspected,Low,0.61,d.miller,MAIL-108,192.168.112.125,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00191,2026-01-20T00:44:46Z,Firewall,DataTransfer.Large,Medium,0.39,f.robinson,CorpNet,192.168.124.9,192.0.2.243,,Network,Blocked,Security-relevant event observed.,user,0
+EVT-00192,2026-01-20T00:47:47Z,AzureAD,Signin.Success,Informational,0.65,a.chen,CorpNet,192.168.140.138,,,Auth,Success,Cloud sign-in successful.,user,0
+EVT-00193,2026-01-20T00:48:54Z,CloudTrail,S3.GetObject,Low,0.67,e.wilson,Azure,203.0.113.153,,,Cloud,Success,Security-relevant event observed.,user,1
+EVT-00194,2026-01-20T00:55:41Z,EDR,Malware.Detected,Medium,0.52,k.brown,VDI-006,10.169.103.207,192.168.90.236,,Endpoint,Detected,Malware detection on endpoint.,user,0
+EVT-00195,2026-01-20T01:12:04Z,Okta,Login.Failed,Medium,0.49,l.garcia,O365,172.31.240.74,,,Auth,Failure,Authentication failed (bad credentials or policy).,user,0
+EVT-00196,2026-01-20T01:15:24Z,DNS,DGA.Suspected,Informational,0.56,d.miller,SRV-055,172.22.115.36,172.19.19.170,zoom.us,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00197,2026-01-20T01:15:46Z,EDR,Malware.Detected,Medium,0.84,k.brown,WS-121,10.91.18.142,,,Endpoint,Detected,Malware detection on endpoint.,user,0
+EVT-00198,2026-01-20T01:17:56Z,EDR,Malware.Detected,Low,0.53,e.wilson,API-139,198.51.100.195,,,Endpoint,Detected,Malware detection on endpoint.,user,1
+EVT-00199,2026-01-20T01:25:19Z,Okta,Login.Failed,Medium,0.53,k.brown,AWS,192.168.117.151,,,Auth,Failure,Authentication failed (bad credentials or policy).,user,0
+EVT-00200,2026-01-20T01:26:16Z,DNS,TXT.Query,Informational,0.5,v.ali,WS-053,10.147.224.226,,github.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00201,2026-01-20T01:28:40Z,VPN,VPN.NewDevice,Low,0.7,i.clark,LAP-002,192.168.191.144,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00202,2026-01-20T01:29:33Z,Proxy,TLS.SNI.Mismatch,Medium,0.62,a.chen,WS-123,203.0.113.176,198.51.100.126,okta.com,GET,Allowed,Security-relevant event observed.,user,1
+EVT-00203,2026-01-20T01:31:15Z,Okta,Policy.Change,Medium,0.37,e.wilson,Azure,192.168.137.188,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00204,2026-01-20T01:33:14Z,CloudTrail,CloudWatch.AlarmDisabled,Low,0.52,i.clark,Azure,192.0.2.224,,,Cloud,Success,Security-relevant event observed.,user,1
+EVT-00205,2026-01-20T01:34:11Z,DNS,TXT.Query,Medium,0.59,i.clark,LAP-033,192.0.2.19,,github.com,Query,Resolved,Security-relevant event observed.,user,1
+EVT-00206,2026-01-20T01:37:44Z,EDR,Ransomware.Blocked,Medium,0.62,d.miller,LAP-035,10.79.139.73,,,Endpoint,Blocked,Security-relevant event observed.,user,0
+EVT-00207,2026-01-20T01:42:53Z,AzureAD,ImpossibleTravel,Low,0.38,e.wilson,O365,172.30.50.206,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00208,2026-01-20T01:49:48Z,Okta,Login.Success,Informational,0.83,f.robinson,AWS,192.0.2.83,,,Auth,Success,User authenticated successfully.,user,1
+EVT-00209,2026-01-20T01:49:57Z,Proxy,Download,Informational,0.71,d.miller,VDI-025,192.168.251.40,198.51.100.93,jira.corp.local,GET,Allowed,File downloaded via web proxy.,user,0
+EVT-00210,2026-01-20T01:50:03Z,Proxy,URL.Allowed,Informational,0.41,s.nguyen,WS-034,10.165.8.45,203.0.113.14,zoom.us,GET,Allowed,Web request allowed.,user,0
+EVT-00211,2026-01-20T01:52:40Z,Okta,Login.Success,Low,0.74,l.garcia,CorpNet,192.168.10.220,,,Auth,Success,User authenticated successfully.,user,0
+EVT-00212,2026-01-20T01:54:40Z,DNS,TXT.Query,Low,0.39,k.brown,VDI-118,172.22.57.9,,microsoft.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00213,2026-01-20T01:59:45Z,EDR,Malware.Detected,Medium,0.4,f.robinson,DB-131,192.168.233.244,,,Endpoint,Detected,Malware detection on endpoint.,user,0
+EVT-00214,2026-01-20T02:05:08Z,AzureAD,Token.Anomaly,Medium,0.43,b.harris,Azure,10.33.158.102,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00215,2026-01-20T02:05:33Z,EDR,USB.Mount,Medium,0.59,h.lee,SRV-158,172.16.155.74,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00216,2026-01-20T02:07:14Z,O365,File.Download,Critical,0.44,s.nguyen,CorpNet,10.62.6.16,,onedrive.com,Access,Success,Security-relevant event observed.,user,0
+EVT-00217,2026-01-20T02:07:42Z,EDR,Ransomware.Blocked,Informational,0.54,b.harris,API-172,172.29.26.248,,,Endpoint,Blocked,Security-relevant event observed.,user,0
+EVT-00218,2026-01-20T02:13:52Z,O365,File.Download,Informational,0.81,s.nguyen,Azure,192.168.115.164,,office.com,Access,Success,Security-relevant event observed.,user,0
+EVT-00219,2026-01-20T02:21:08Z,EDR,Process.Suspicious,Low,0.65,l.garcia,WS-064,10.184.101.71,,,Endpoint,Observed,Suspicious process behavior observed.,user,0
+EVT-00220,2026-01-20T02:23:43Z,AzureAD,Signin.Failed,Informational,0.47,o.martin,CorpNet,10.220.181.109,,,Auth,Failure,Cloud sign-in failed.,user,0
+EVT-00221,2026-01-20T02:27:50Z,DNS,NXDOMAIN,Low,0.43,o.martin,SRV-143,172.20.95.81,,intranet.corp.local,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00222,2026-01-20T02:31:40Z,EDR,USB.Mount,Informational,0.59,p.singh,LAP-139,198.51.100.253,,,Endpoint,Observed,Security-relevant event observed.,user,1
+EVT-00223,2026-01-20T02:34:13Z,Firewall,DataTransfer.Large,Informational,0.89,f.robinson,O365,192.0.2.11,198.51.100.21,,Network,Blocked,Security-relevant event observed.,user,1
+EVT-00224,2026-01-20T02:34:21Z,EDR,Process.Suspicious,Informational,0.55,h.lee,LAP-152,172.20.121.75,,,Endpoint,Observed,Suspicious process behavior observed.,user,0
+EVT-00225,2026-01-20T02:37:22Z,DNS,NXDOMAIN,Medium,0.47,r.kim,DC-024,198.51.100.40,,jira.corp.local,Query,Resolved,Security-relevant event observed.,user,1
+EVT-00226,2026-01-20T02:41:11Z,Firewall,DataTransfer.Large,High,0.69,h.lee,AWS,192.168.123.146,203.0.113.174,,Network,Blocked,Security-relevant event observed.,user,0
+EVT-00227,2026-01-20T02:43:17Z,CloudTrail,S3.PutObject,Low,0.44,d.miller,O365,192.168.0.243,,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00228,2026-01-20T02:44:37Z,EDR,Process.Suspicious,Low,0.58,c.taylor,LAP-062,10.191.72.131,,,Endpoint,Observed,Suspicious process behavior observed.,user,0
+EVT-00229,2026-01-20T02:46:52Z,EmailGateway,Attachment.Blocked,Medium,0.75,svc-ci,WS-187,192.168.107.113,,gmail.com,Outbound,Delivered,Security-relevant event observed.,service_account,0
+EVT-00230,2026-01-20T02:48:36Z,Okta,Login.Success,Medium,0.62,k.brown,O365,192.0.2.221,,,Auth,Success,User authenticated successfully.,user,1
+EVT-00231,2026-01-20T02:50:52Z,EmailGateway,Outbound.Spam,Informational,0.65,e.wilson,WS-175,192.0.2.227,,proton.me,Inbound,Delivered,Security-relevant event observed.,user,1
+EVT-00232,2026-01-20T02:52:12Z,Firewall,Connection.Allowed,Informational,0.33,m.patel,CorpNet,192.168.119.250,198.51.100.26,,Network,Allowed,Connection allowed by firewall policy.,user,0
+EVT-00233,2026-01-20T02:53:06Z,Okta,MFA.Failed,Low,0.51,b.harris,CorpNet,172.18.55.197,,,Auth,Failure,MFA denied or timed out.,user,0
+EVT-00234,2026-01-20T03:02:38Z,AzureAD,Token.Anomaly,Medium,0.68,v.ali,CorpNet,192.168.242.204,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00235,2026-01-20T03:02:38Z,Firewall,DataTransfer.Large,Low,0.67,c.taylor,O365,198.51.100.195,203.0.113.132,,Network,Blocked,Security-relevant event observed.,user,1
+EVT-00236,2026-01-20T03:02:55Z,Okta,Policy.Change,Low,0.42,h.lee,O365,10.253.197.29,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00237,2026-01-20T03:03:16Z,EmailGateway,DMARC.Fail,Informational,0.72,s.nguyen,SRV-080,10.159.192.102,,vendor.example,Inbound,Delivered,Security-relevant event observed.,user,0
+EVT-00238,2026-01-20T03:05:11Z,Firewall,Connection.Allowed,High,0.66,g.thomas,Azure,172.25.82.11,192.0.2.128,,Network,Allowed,Connection allowed by firewall policy.,user,0
+EVT-00239,2026-01-20T03:06:04Z,Firewall,Connection.Allowed,Low,0.57,d.miller,CorpNet,172.17.171.17,203.0.113.25,,Network,Allowed,Connection allowed by firewall policy.,user,0
+EVT-00240,2026-01-20T03:09:12Z,EDR,Exploit.Prevention,Low,0.67,h.lee,API-111,10.132.113.131,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00241,2026-01-20T03:09:27Z,EDR,Exploit.Prevention,Informational,0.49,t.jones,DC-127,198.51.100.193,,,Endpoint,Observed,Security-relevant event observed.,user,1
+EVT-00242,2026-01-20T03:11:10Z,DNS,TXT.Query,Informational,0.4,h.lee,MAIL-123,10.102.191.244,172.22.9.174,microsoft.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00243,2026-01-20T03:12:27Z,DNS,DGA.Suspected,Low,0.51,m.patel,API-056,10.185.50.252,,intranet.corp.local,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00244,2026-01-20T03:15:09Z,Okta,Policy.Change,Informational,0.69,p.singh,AWS,10.124.223.151,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00245,2026-01-20T03:17:55Z,EDR,Process.Suspicious,Informational,0.53,g.thomas,LAP-175,172.29.27.223,,,Endpoint,Observed,Suspicious process behavior observed.,user,0
+EVT-00246,2026-01-20T03:20:32Z,AzureAD,Token.Anomaly,Low,0.66,s.nguyen,CorpNet,192.168.51.237,10.146.176.225,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00247,2026-01-20T03:23:13Z,Firewall,DataTransfer.Large,Low,0.43,j.smith,Azure,192.168.38.41,198.51.100.105,,Network,Blocked,Security-relevant event observed.,user,0
+EVT-00248,2026-01-20T03:25:53Z,Okta,Password.Reset,Informational,0.66,sec-admin,CorpNet,192.168.165.222,,,Auth,Success,Security-relevant event observed.,privileged_user,0
+EVT-00249,2026-01-20T03:28:53Z,Firewall,DataTransfer.Large,High,0.99,r.kim,AWS,172.27.30.159,192.0.2.171,,Network,Blocked,Security-relevant event observed.,user,0
+EVT-00250,2026-01-20T03:33:21Z,CloudTrail,IAM.PolicyChange,Low,0.7,o.martin,O365,172.19.82.85,,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00251,2026-01-20T03:35:53Z,EmailGateway,Attachment.Blocked,Informational,0.5,it-admin,DC-142,192.0.2.3,192.168.76.140,proton.me,Inbound,Delivered,Security-relevant event observed.,privileged_user,1
+EVT-00252,2026-01-20T03:38:25Z,EDR,Exploit.Prevention,Informational,0.64,e.wilson,VDI-058,10.44.216.9,10.119.13.144,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00253,2026-01-20T03:39:34Z,AzureAD,Token.Anomaly,Informational,0.94,a.chen,Azure,172.28.2.181,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00254,2026-01-20T03:39:38Z,Okta,Password.Reset,Low,0.38,r.kim,O365,10.104.79.138,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00255,2026-01-20T03:40:29Z,Okta,MFA.Failed,Low,0.58,r.kim,CorpNet,10.169.83.188,,,Auth,Failure,MFA denied or timed out.,user,0
+EVT-00256,2026-01-20T03:40:38Z,CloudTrail,S3.GetObject,Low,0.64,l.garcia,CorpNet,10.254.148.165,,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00257,2026-01-20T03:42:09Z,Okta,MFA.Challenge,Low,0.69,r.kim,Azure,192.0.2.68,,,Auth,Success,MFA challenge initiated.,user,1
+EVT-00258,2026-01-20T03:45:29Z,O365,SharePoint.Access,Low,0.52,a.chen,AWS,172.23.156.170,,office.com,Access,Success,Security-relevant event observed.,user,0
+EVT-00259,2026-01-20T03:47:00Z,Proxy,Upload,Medium,0.67,b.harris,DC-016,172.20.214.52,192.0.2.227,microsoft.com,GET,Allowed,Upload via web proxy.,user,0
+EVT-00260,2026-01-20T03:49:50Z,O365,SharePoint.Access,Informational,0.53,k.brown,CorpNet,10.81.216.88,,office.com,Access,Success,Security-relevant event observed.,user,0
+EVT-00261,2026-01-20T03:53:44Z,EmailGateway,Phish.Detected,Informational,0.3,m.patel,MAIL-187,10.127.98.49,,outlook.com,Inbound,Delivered,Phishing email detected by gateway.,user,0
+EVT-00262,2026-01-20T03:53:52Z,VPN,VPN.Connect,Low,0.76,svc-deploy,LAP-107,10.129.242.180,192.168.4.78,,Auth,Success,VPN session established.,service_account,0
+EVT-00263,2026-01-20T03:56:12Z,DNS,DGA.Suspected,Informational,0.29,k.brown,MAIL-185,10.190.61.129,,cdn.microsoft.com,Query,NXDOMAIN,Security-relevant event observed.,user,0
+EVT-00264,2026-01-20T03:59:42Z,Firewall,Connection.Allowed,Informational,0.59,p.singh,O365,172.19.23.230,198.51.100.127,,Network,Allowed,Connection allowed by firewall policy.,user,0
+EVT-00265,2026-01-20T04:01:07Z,Okta,MFA.Failed,Informational,0.68,d.miller,O365,192.168.89.161,,,Auth,Failure,MFA denied or timed out.,user,0
+EVT-00266,2026-01-20T04:02:51Z,VPN,VPN.Failed,Medium,0.68,svc-backup,API-031,192.168.201.136,10.1.11.251,,Auth,Failure,VPN authentication failed.,service_account,0
+EVT-00267,2026-01-20T04:03:06Z,AzureAD,Token.Anomaly,Informational,0.61,l.garcia,AWS,10.149.41.122,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00268,2026-01-20T04:03:43Z,EmailGateway,Outbound.Spam,Critical,0.57,m.patel,DC-023,172.19.206.222,,vendor.example,Inbound,Delivered,Security-relevant event observed.,user,0
+EVT-00269,2026-01-20T04:11:43Z,VPN,VPN.Failed,Low,0.45,e.wilson,SRV-180,10.240.113.52,,,Auth,Failure,VPN authentication failed.,user,0
+EVT-00270,2026-01-20T04:13:51Z,DNS,DGA.Suspected,Informational,0.49,t.jones,SRV-076,10.132.93.243,,microsoft.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00271,2026-01-20T04:17:06Z,Firewall,PortScan.Detected,Medium,0.6,f.robinson,O365,198.51.100.166,198.51.100.163,,Network,Blocked,Potential port scanning activity detected.,user,1
+EVT-00272,2026-01-20T04:18:37Z,DNS,NXDOMAIN,Informational,0.46,i.clark,DB-161,172.18.47.104,,okta.com,Query,NXDOMAIN,Security-relevant event observed.,user,0
+EVT-00273,2026-01-20T04:23:40Z,VPN,VPN.Connect,Informational,0.42,svc-backup,WS-080,198.51.100.149,,,Auth,Success,VPN session established.,service_account,1
+EVT-00274,2026-01-20T04:25:31Z,CloudTrail,IAM.PolicyChange,Low,0.62,s.nguyen,CorpNet,10.225.233.1,,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00275,2026-01-20T04:28:02Z,EDR,Process.Suspicious,Informational,0.78,r.kim,DB-191,172.24.213.155,,,Endpoint,Observed,Suspicious process behavior observed.,user,0
+EVT-00276,2026-01-20T04:30:08Z,EmailGateway,URL.Rewrite,Informational,0.37,o.martin,API-193,172.16.116.58,,gmail.com,Inbound,Delivered,Security-relevant event observed.,user,0
+EVT-00277,2026-01-20T04:31:04Z,EDR,Malware.Detected,Low,0.5,n.davis,VDI-046,192.0.2.133,,,Endpoint,Detected,Malware detection on endpoint.,user,1
+EVT-00278,2026-01-20T04:31:06Z,AzureAD,Token.Anomaly,Low,0.42,p.singh,CorpNet,192.168.77.89,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00279,2026-01-20T04:31:42Z,EmailGateway,URL.Rewrite,Medium,0.66,k.brown,WS-004,10.252.76.244,192.168.38.186,proton.me,Inbound,Delivered,Security-relevant event observed.,user,0
+EVT-00280,2026-01-20T04:32:07Z,VPN,VPN.Disconnect,Informational,0.32,t.jones,DB-024,172.18.190.171,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00281,2026-01-20T04:36:41Z,Firewall,DataTransfer.Large,Low,0.54,s.nguyen,CorpNet,172.25.60.164,203.0.113.95,,Network,Blocked,Security-relevant event observed.,user,0
+EVT-00282,2026-01-20T04:40:17Z,VPN,VPN.NewDevice,Informational,0.7,v.ali,WS-021,10.76.216.29,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00283,2026-01-20T04:41:59Z,DNS,HighEntropy.Subdomain,High,0.2,a.chen,API-146,192.168.96.215,,cdn.okta.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00284,2026-01-20T04:45:13Z,AzureAD,Token.Anomaly,Low,0.4,svc-ci,Azure,192.168.197.39,,,Auth,Success,Security-relevant event observed.,service_account,0
+EVT-00285,2026-01-20T04:45:45Z,Proxy,Upload,Informational,0.6,s.nguyen,SRV-012,203.0.113.127,198.51.100.25,github.com,GET,Allowed,Upload via web proxy.,user,1
+EVT-00286,2026-01-20T04:46:31Z,EDR,Exploit.Prevention,Low,0.58,b.harris,VDI-111,10.211.173.212,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00287,2026-01-20T04:46:34Z,EmailGateway,DMARC.Fail,Critical,0.51,j.smith,SRV-137,198.51.100.119,,vendor.example,Inbound,Delivered,Security-relevant event observed.,user,1
+EVT-00288,2026-01-20T04:48:41Z,CloudTrail,IAM.PolicyChange,Informational,0.66,i.clark,AWS,192.0.2.48,,,Cloud,Success,Security-relevant event observed.,user,1
+EVT-00289,2026-01-20T04:48:59Z,Okta,Password.Reset,Low,0.6,d.miller,CorpNet,10.37.231.45,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00290,2026-01-20T04:54:14Z,EmailGateway,URL.Rewrite,High,0.27,b.harris,MAIL-165,198.51.100.172,,vendor.example,Inbound,Delivered,Security-relevant event observed.,user,1
+EVT-00291,2026-01-20T04:59:22Z,Proxy,Download,Informational,0.47,c.taylor,API-139,10.118.196.178,198.51.100.181,zoom.us,GET,Allowed,File downloaded via web proxy.,user,0
+EVT-00292,2026-01-20T05:03:32Z,Okta,Policy.Change,High,0.5,sec-admin,Azure,192.168.80.105,,,Auth,Success,Security-relevant event observed.,privileged_user,0
+EVT-00293,2026-01-20T05:12:14Z,VPN,VPN.Connect,Informational,0.41,f.robinson,DC-068,192.0.2.148,,,Auth,Success,VPN session established.,user,1
+EVT-00294,2026-01-20T05:13:52Z,VPN,VPN.Disconnect,Medium,0.33,f.robinson,MAIL-071,10.38.207.94,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00295,2026-01-20T05:20:22Z,CloudTrail,AccessKey.Created,Informational,0.64,r.kim,CorpNet,192.168.30.135,10.24.3.106,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00296,2026-01-20T05:24:34Z,Proxy,Download,Informational,0.68,i.clark,VDI-045,192.168.207.212,203.0.113.132,zoom.us,GET,Allowed,File downloaded via web proxy.,user,0
+EVT-00297,2026-01-20T05:26:50Z,O365,Mailbox.ForwardingSet,Critical,0.4,t.jones,CorpNet,198.51.100.240,,,Access,Success,Security-relevant event observed.,user,1
+EVT-00298,2026-01-20T05:27:48Z,AzureAD,Token.Anomaly,Medium,0.57,p.singh,CorpNet,198.51.100.188,,,Auth,Success,Security-relevant event observed.,user,1
+EVT-00299,2026-01-20T05:32:52Z,VPN,VPN.NewDevice,Low,0.61,c.taylor,API-067,172.19.240.14,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00300,2026-01-20T05:34:27Z,EDR,USB.Mount,High,0.52,p.singh,LAP-116,192.168.22.187,,,Endpoint,Observed,Security-relevant event observed.,user,0
+EVT-00301,2026-01-20T05:35:56Z,DNS,NXDOMAIN,Medium,0.76,h.lee,VDI-129,192.168.181.19,,intranet.corp.local,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00302,2026-01-20T05:37:36Z,CloudTrail,AccessKey.Created,Critical,0.64,b.harris,Azure,172.22.188.174,,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00303,2026-01-20T05:48:09Z,VPN,VPN.Connect,Informational,0.39,r.kim,SRV-085,172.24.47.96,,,Auth,Success,VPN session established.,user,0
+EVT-00304,2026-01-20T05:52:09Z,Proxy,Category.Block,Informational,0.28,j.smith,DC-136,198.51.100.235,192.0.2.29,microsoft.com,GET,Allowed,Security-relevant event observed.,user,1
+EVT-00305,2026-01-20T05:53:38Z,VPN,VPN.Connect,High,0.54,d.miller,MAIL-187,198.51.100.15,,,Auth,Success,VPN session established.,user,1
+EVT-00306,2026-01-20T05:54:55Z,Okta,Password.Reset,Low,0.62,svc-ci,AWS,10.201.191.204,,,Auth,Success,Security-relevant event observed.,service_account,0
+EVT-00307,2026-01-20T05:59:12Z,CloudTrail,AccessKey.Created,Low,0.83,m.patel,O365,10.108.161.55,,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00308,2026-01-20T06:03:24Z,AzureAD,Signin.Failed,Informational,0.63,svc-deploy,AWS,10.194.78.190,,,Auth,Failure,Cloud sign-in failed.,service_account,0
+EVT-00309,2026-01-20T06:07:18Z,CloudTrail,CloudWatch.AlarmDisabled,Medium,0.72,p.singh,Azure,192.168.128.174,,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00310,2026-01-20T06:07:40Z,EDR,Ransomware.Blocked,Informational,0.56,d.miller,VDI-188,192.168.164.61,,,Endpoint,Blocked,Security-relevant event observed.,user,0
+EVT-00311,2026-01-20T06:12:15Z,Okta,Password.Reset,High,0.6,t.jones,Azure,10.63.78.78,172.23.177.243,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00312,2026-01-20T06:17:15Z,Firewall,Connection.Denied,Informational,0.33,m.patel,O365,192.168.86.83,192.0.2.75,,Network,Blocked,Connection denied by firewall policy.,user,0
+EVT-00313,2026-01-20T06:20:39Z,Okta,Policy.Change,Informational,0.36,d.miller,AWS,192.168.54.238,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00314,2026-01-20T06:28:43Z,VPN,VPN.Failed,High,0.42,a.chen,VDI-103,10.142.179.165,,,Auth,Failure,VPN authentication failed.,user,0
+EVT-00315,2026-01-20T06:28:47Z,O365,File.ShareExternal,Medium,0.7,s.nguyen,CorpNet,203.0.113.210,,onedrive.com,Access,Success,Security-relevant event observed.,user,1
+EVT-00316,2026-01-20T06:34:42Z,DNS,DGA.Suspected,Informational,0.37,c.taylor,DC-070,10.69.55.40,172.30.160.105,microsoft.com,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00317,2026-01-20T06:36:10Z,Okta,Login.Success,Informational,0.84,h.lee,O365,172.27.164.100,,,Auth,Success,User authenticated successfully.,user,0
+EVT-00318,2026-01-20T06:38:56Z,CloudTrail,S3.PutObject,Informational,0.34,d.miller,CorpNet,10.80.225.107,,,Cloud,Success,Security-relevant event observed.,user,0
+EVT-00319,2026-01-20T06:40:07Z,Okta,Login.Success,Low,0.74,b.harris,CorpNet,192.0.2.136,10.130.104.85,,Auth,Success,User authenticated successfully.,user,1
+EVT-00320,2026-01-20T06:41:12Z,Proxy,URL.Blocked,Informational,0.59,k.brown,LAP-022,198.51.100.251,192.0.2.197,okta.com,POST,Allowed,Web request blocked by policy.,user,1
+EVT-00321,2026-01-20T06:48:11Z,O365,SharePoint.Access,Low,0.75,t.jones,AWS,192.0.2.39,,office.com,Access,Success,Security-relevant event observed.,user,1
+EVT-00322,2026-01-20T06:50:25Z,Proxy,Upload,Critical,0.72,j.smith,API-104,10.115.153.176,198.51.100.168,intranet.corp.local,GET,Allowed,Upload via web proxy.,user,0
+EVT-00323,2026-01-20T06:51:55Z,Firewall,GeoIP.Block,Informational,0.59,c.taylor,CorpNet,203.0.113.184,203.0.113.30,,Network,Blocked,Security-relevant event observed.,user,1
+EVT-00324,2026-01-20T06:54:30Z,AzureAD,Signin.Failed,Critical,0.4,k.brown,AWS,10.88.78.195,,,Auth,Failure,Cloud sign-in failed.,user,0
+EVT-00325,2026-01-20T07:00:46Z,EmailGateway,URL.Rewrite,Medium,0.48,it-admin,API-030,10.72.115.221,,corp.local,Outbound,Delivered,Security-relevant event observed.,privileged_user,0
+EVT-00326,2026-01-20T07:00:57Z,Firewall,Connection.Allowed,Informational,0.87,c.taylor,O365,192.168.66.145,203.0.113.202,,Network,Allowed,Connection allowed by firewall policy.,user,0
+EVT-00327,2026-01-20T07:06:37Z,AzureAD,ImpossibleTravel,High,0.57,a.chen,AWS,192.0.2.128,,,Auth,Success,Security-relevant event observed.,user,1
+EVT-00328,2026-01-20T07:07:12Z,VPN,VPN.NewDevice,Low,0.42,t.jones,DC-116,10.141.248.161,,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00329,2026-01-20T07:17:12Z,Proxy,URL.Allowed,Low,0.64,p.singh,API-106,10.74.8.67,192.0.2.240,zoom.us,GET,Allowed,Web request allowed.,user,0
+EVT-00330,2026-01-20T07:18:22Z,DNS,HighEntropy.Subdomain,Low,0.4,n.davis,DC-147,203.0.113.77,192.168.17.129,jira.corp.local,Query,NXDOMAIN,Security-relevant event observed.,user,1
+EVT-00331,2026-01-20T07:20:20Z,Proxy,Download,Critical,0.51,g.thomas,DC-182,172.16.188.85,192.0.2.29,office.com,POST,Allowed,File downloaded via web proxy.,user,0
+EVT-00332,2026-01-20T07:22:15Z,Firewall,GeoIP.Block,Low,0.43,i.clark,CorpNet,192.0.2.113,198.51.100.157,,Network,Blocked,Security-relevant event observed.,user,1
+EVT-00333,2026-01-20T07:23:00Z,DNS,HighEntropy.Subdomain,High,0.82,v.ali,WS-185,192.168.79.20,,zoom.us,Query,Resolved,Security-relevant event observed.,user,0
+EVT-00334,2026-01-20T07:23:08Z,AzureAD,Role.Assignment,Informational,0.56,f.robinson,AWS,192.168.136.8,192.168.158.236,,Auth,Success,Security-relevant event observed.,user,0
+EVT-00335,2026-01-20T07:26:36Z,EDR,Process.Suspicious,Low,0.28,v.ali,API-194,192.0.2.209,,,Endpoint,Observed,Suspicious process behavior observed.,user,1
+EVT-00336,2026-01-20T07:28:08Z,CloudTrail,S3.PutObject,Informational,0.53,n.davis,Azure,203.0.113.127,,,Cloud,Success,Security-relevant event observed.,user,1
+EVT-00337,2026-01-20T07:29:15Z,EmailGateway,Outbound.Spam,High,0.51,m.patel,SRV-155,192.168.113.164,,outlook.com,Inbound,Delivered,Security-relevant event observed.,user,0
+EVT-00338,2026-01-20T07:30:21Z,Proxy,TLS.SNI.Mismatch,High,0.46,b.harris,MAIL-082,172.17.35.61,192.0.2.176,microsoft.com,POST,Allowed,Security-relevant event observed.,user,0
+EVT-00339,2026-01-20T07:31:23Z,Okta,Login.Success,High,0.56,g.thomas,AWS,198.51.100.153,10.206.61.242,,Auth,Success,User authenticated successfully.,user,1
+EVT-00340,2026-01-20T07:38:39Z,AzureAD,ImpossibleTravel,Informational,0.33,t.jones,O365,192.0.2.173,,,Auth,Success,Security-relevant event observed.,user,1
+EVT-00341,2026-01-20T07:44:24Z,CloudTrail,EC2.SecurityGroupChange,Informational,0.75,a.chen,CorpNet,192.0.2.45,,,Cloud,Success,Security-relevant event observed.,user,1
+EVT-00342,2026-01-20T07:48:12Z,O365,OneDrive.MassDownload,Informational,0.49,o.martin,O365,10.143.16.46,,onedrive.com,Access,Success,Security-relevant event observed.,user,0
+EVT-00343,2026-01-20T07:48:19Z,Proxy,URL.Blocked,Medium,0.66,r.kim,SRV-199,192.168.186.246,198.51.100.96,zoom.us,GET,Allowed,Web request blocked by policy.,user,0
+EVT-00344,2026-01-20T07:50:50Z,Proxy,Download,High,0.39,k.brown,API-044,192.168.58.136,192.0.2.50,slack.com,GET,Allowed,File downloaded via web proxy.,user,0
