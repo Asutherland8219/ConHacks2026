@@ -261,7 +261,7 @@ class SOCTriageApp(App):
         yield Footer()
 
     def on_mount(self) -> None:
-        self.title = "D3 Security Challenge: SOC Triage v1.0"
+        self.title = "D3 Security Challenge: SOC Triage v0.1"
         self.push_screen(FileSelectorScreen())
 
     def action_open_file(self):
