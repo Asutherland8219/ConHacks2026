@@ -1,0 +1,98 @@
+[
+  {
+    "id": "inv-001",
+    "name": "iPhone 13 Pro",
+    "category": "phone",
+    "brand": "Apple",
+    "color": "midnight blue",
+    "location_found": "Library help desk",
+    "details": "128GB, MagSafe case with tiny sun sticker near the camera",
+    "verification_prompt": "What sticker or case is on the phone?",
+    "status": "stored",
+    "tags": ["ios", "smartphone", "magsafe", "sun sticker"]
+  },
+  {
+    "id": "inv-002",
+    "name": "MacBook Air M2",
+    "category": "laptop",
+    "brand": "Apple",
+    "color": "midnight",
+    "location_found": "Engineering building room EV-2.220",
+    "details": "13-inch, keyboard in English, small scratch on the left palm rest, sticky note under the lid with wifi password",
+    "verification_prompt": "What is written on the sticky note under the lid?",
+    "status": "stored",
+    "tags": ["notebook", "m2", "13-inch", "scratch"]
+  },
+  {
+    "id": "inv-003",
+    "name": "Backpack",
+    "category": "backpack",
+    "brand": "The North Face",
+    "color": "black",
+    "location_found": "Gym lockers",
+    "details": "Red zipper pull tab, contains a chemistry notebook and reusable bottle",
+    "verification_prompt": "Name one item inside the backpack.",
+    "status": "stored",
+    "tags": ["bag", "north face", "gym", "bottle"]
+  },
+  {
+    "id": "inv-004",
+    "name": "AirPods Pro 2",
+    "category": "audio",
+    "brand": "Apple",
+    "color": "white",
+    "location_found": "Hall building security",
+    "details": "Engraved initials J.S., tiny scuff on the hinge, no cable in the case",
+    "verification_prompt": "What initials are engraved?",
+    "status": "stored",
+    "tags": ["earbuds", "wireless", "engraving"]
+  },
+  {
+    "id": "inv-005",
+    "name": "Hoodie",
+    "category": "clothing",
+    "brand": "Concordia",
+    "color": "maroon",
+    "location_found": "Student success center",
+    "details": "Size M, white drawstrings, 'Stingers' printed on the left sleeve",
+    "verification_prompt": "What is printed on the sleeve?",
+    "status": "stored",
+    "tags": ["sweater", "stingers", "size m"]
+  },
+  {
+    "id": "inv-006",
+    "name": "Winter Jacket",
+    "category": "clothing",
+    "brand": "Canada Goose",
+    "color": "forest green",
+    "location_found": "EV building coat rack",
+    "details": "Fur hood, small rip near right pocket, gloves in left pocket",
+    "verification_prompt": "What is in the pockets?",
+    "status": "stored",
+    "tags": ["outerwear", "fur hood", "rip"]
+  },
+  {
+    "id": "inv-007",
+    "name": "Pixel 7a",
+    "category": "phone",
+    "brand": "Google",
+    "color": "charcoal",
+    "location_found": "EV cafeteria",
+    "details": "Matte black case, cracked bottom-right corner of the screen protector",
+    "verification_prompt": "Describe the crack or case.",
+    "status": "stored",
+    "tags": ["android", "smartphone", "case"]
+  },
+  {
+    "id": "inv-008",
+    "name": "Wallet",
+    "category": "wallet",
+    "brand": "Herschel",
+    "color": "brown",
+    "location_found": "John Molson building, 5th floor",
+    "details": "Blue lanyard attached, student OPUS card inside",
+    "verification_prompt": "What card or strap is attached?",
+    "status": "stored",
+    "tags": ["cards", "lanyard", "opus"]
+  }
+]

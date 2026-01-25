@@ -1,0 +1,9 @@
+{
+  "ASSISTANT_KEY": "X",
+  "PORT": 8000,
+  "SMTP_HOST": "smtp.sendgrid.net",
+  "SMTP_PORT": 465,
+  "SMTP_USER": "X",
+  "SMTP_PASS": "X",
+  "MAIL_FROM": ""
+}

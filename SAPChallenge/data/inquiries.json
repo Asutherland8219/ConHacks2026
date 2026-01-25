@@ -1,0 +1,150 @@
+[
+  {
+    "id": "669df593a8dc10e9",
+    "code": "4E2F07",
+    "contact": "ab@gmail.com",
+    "category": "phone",
+    "brand": "Apple",
+    "color": "Red",
+    "location_lost": "Building",
+    "description": "there's a scratch at the back Additional detail: hi",
+    "attachments": [],
+    "created_at": "2026-01-24 21:10 UTC",
+    "status": "matched",
+    "matches": [
+      {
+        "item_id": "inv-001",
+        "name": "iPhone 13 Pro",
+        "confidence": 0.958,
+        "reasons": [
+          "Shared terms: apple, phone, the",
+          "Brand matches",
+          "Category matches"
+        ],
+        "verification_prompt": "What sticker or case is on the phone?"
+      },
+      {
+        "item_id": "inv-002",
+        "name": "MacBook Air M2",
+        "confidence": 0.792,
+        "reasons": [
+          "Shared terms: apple, scratch, the",
+          "Brand matches",
+          "Nearby location: building"
+        ],
+        "verification_prompt": "What is written on the sticky note under the lid?"
+      },
+      {
+        "item_id": "inv-004",
+        "name": "AirPods Pro 2",
+        "confidence": 0.792,
+        "reasons": [
+          "Shared terms: apple, s, the",
+          "Brand matches",
+          "Nearby location: building"
+        ],
+        "verification_prompt": "What initials are engraved?"
+      },
+      {
+        "item_id": "inv-007",
+        "name": "Pixel 7a",
+        "confidence": 0.5,
+        "reasons": [
+          "Shared terms: phone, the",
+          "Category matches"
+        ],
+        "verification_prompt": "Describe the crack or case."
+      },
+      {
+        "item_id": "inv-003",
+        "name": "Backpack",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: a, red, the"
+        ],
+        "verification_prompt": "Name one item inside the backpack."
+      },
+      {
+        "item_id": "inv-005",
+        "name": "Hoodie",
+        "confidence": 0.125,
+        "reasons": [
+          "Shared terms: the"
+        ],
+        "verification_prompt": "What is printed on the sleeve?"
+      },
+      {
+        "item_id": "inv-006",
+        "name": "Winter Jacket",
+        "confidence": 0.083,
+        "reasons": [
+          "Nearby location: building"
+        ],
+        "verification_prompt": "What is in the pockets?"
+      },
+      {
+        "item_id": "inv-008",
+        "name": "Wallet",
+        "confidence": 0.083,
+        "reasons": [
+          "Nearby location: building"
+        ],
+        "verification_prompt": "What card or strap is attached?"
+      }
+    ],
+    "follow_up_question": "We found several similar items. Add one unique detail (serial, sticker, engraving, or passcode hint) so we can filter the list.",
+    "follow_up_answer": "hi",
+    "fraud_flags": [],
+    "notes": "The match is approved"
+  },
+  {
+    "id": "d0e3ae0113cee10a",
+    "code": "E893C3",
+    "contact": "a@gmail.com",
+    "category": "laptop",
+    "brand": "Google",
+    "color": "black",
+    "location_lost": "H675",
+    "description": "it doesn't work",
+    "attachments": [
+      "E893C3_s-l1200.jpg"
+    ],
+    "created_at": "2026-01-24 21:25 UTC",
+    "status": "under_review",
+    "matches": [
+      {
+        "item_id": "inv-007",
+        "name": "Pixel 7a",
+        "confidence": 0.583,
+        "reasons": [
+          "Shared terms: black, google",
+          "Brand matches"
+        ],
+        "verification_prompt": "Describe the crack or case."
+      },
+      {
+        "item_id": "inv-002",
+        "name": "MacBook Air M2",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: laptop",
+          "Category matches"
+        ],
+        "verification_prompt": "What is written on the sticky note under the lid?"
+      },
+      {
+        "item_id": "inv-003",
+        "name": "Backpack",
+        "confidence": 0.292,
+        "reasons": [
+          "Shared terms: black",
+          "Color matches"
+        ],
+        "verification_prompt": "Name one item inside the backpack."
+      }
+    ],
+    "follow_up_question": "",
+    "follow_up_answer": "",
+    "fraud_flags": []
+  }
+]
