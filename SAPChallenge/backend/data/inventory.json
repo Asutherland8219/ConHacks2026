@@ -9,7 +9,12 @@
     "details": "128GB, MagSafe case with tiny sun sticker near the camera",
     "verification_prompt": "What sticker or case is on the phone?",
     "status": "stored",
-    "tags": ["ios", "smartphone", "magsafe", "sun sticker"]
+    "tags": [
+      "ios",
+      "smartphone",
+      "magsafe",
+      "sun sticker"
+    ]
   },
   {
     "id": "inv-002",
@@ -21,7 +26,12 @@
     "details": "13-inch, keyboard in English, small scratch on the left palm rest, sticky note under the lid with wifi password",
     "verification_prompt": "What is written on the sticky note under the lid?",
     "status": "stored",
-    "tags": ["notebook", "m2", "13-inch", "scratch"]
+    "tags": [
+      "notebook",
+      "m2",
+      "13-inch",
+      "scratch"
+    ]
   },
   {
     "id": "inv-003",
@@ -33,7 +43,12 @@
     "details": "Red zipper pull tab, contains a chemistry notebook and reusable bottle",
     "verification_prompt": "Name one item inside the backpack.",
     "status": "stored",
-    "tags": ["bag", "north face", "gym", "bottle"]
+    "tags": [
+      "bag",
+      "north face",
+      "gym",
+      "bottle"
+    ]
   },
   {
     "id": "inv-004",
@@ -45,7 +60,11 @@
     "details": "Engraved initials J.S., tiny scuff on the hinge, no cable in the case",
     "verification_prompt": "What initials are engraved?",
     "status": "stored",
-    "tags": ["earbuds", "wireless", "engraving"]
+    "tags": [
+      "earbuds",
+      "wireless",
+      "engraving"
+    ]
   },
   {
     "id": "inv-005",
@@ -57,7 +76,11 @@
     "details": "Size M, white drawstrings, 'Stingers' printed on the left sleeve",
     "verification_prompt": "What is printed on the sleeve?",
     "status": "stored",
-    "tags": ["sweater", "stingers", "size m"]
+    "tags": [
+      "sweater",
+      "stingers",
+      "size m"
+    ]
   },
   {
     "id": "inv-006",
@@ -69,7 +92,11 @@
     "details": "Fur hood, small rip near right pocket, gloves in left pocket",
     "verification_prompt": "What is in the pockets?",
     "status": "stored",
-    "tags": ["outerwear", "fur hood", "rip"]
+    "tags": [
+      "outerwear",
+      "fur hood",
+      "rip"
+    ]
   },
   {
     "id": "inv-007",
@@ -81,7 +108,11 @@
     "details": "Matte black case, cracked bottom-right corner of the screen protector",
     "verification_prompt": "Describe the crack or case.",
     "status": "stored",
-    "tags": ["android", "smartphone", "case"]
+    "tags": [
+      "android",
+      "smartphone",
+      "case"
+    ]
   },
   {
     "id": "inv-008",
@@ -93,6 +124,26 @@
     "details": "Blue lanyard attached, student OPUS card inside",
     "verification_prompt": "What card or strap is attached?",
     "status": "stored",
-    "tags": ["cards", "lanyard", "opus"]
+    "tags": [
+      "cards",
+      "lanyard",
+      "opus"
+    ]
+  },
+  {
+    "id": "inv-009",
+    "name": "Energy drink",
+    "category": "Drink",
+    "brand": "Celcius",
+    "color": "Black",
+    "location_found": "MB 2.210",
+    "details": "opened can",
+    "verification_prompt": "hello",
+    "status": "stored",
+    "tags": [
+      "drink",
+      "enerygy",
+      "morning"
+    ]
   }
 ]

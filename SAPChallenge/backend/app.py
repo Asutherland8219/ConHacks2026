@@ -490,6 +490,7 @@ class LostAndFoundHandler(BaseHTTPRequestHandler):
         full_name = form.getfirst("full_name", "").strip()
         phone = form.getfirst("phone", "").strip()
         contact = form.getfirst("contact", "").strip()
+        email_opt_in = form.getfirst("email_opt_in", "true").strip().lower() in {"1", "true", "yes", "on"}
         category = form.getfirst("category", "").strip()
         brand = form.getfirst("brand", "").strip()
         color = form.getfirst("color", "").strip()
@@ -530,6 +531,7 @@ class LostAndFoundHandler(BaseHTTPRequestHandler):
             "follow_up_question": "",
             "follow_up_answer": "",
             "fraud_flags": [],
+            "email_opt_in": email_opt_in,
         }
 
         inquiries = self.load_inquiries()
@@ -546,7 +548,7 @@ class LostAndFoundHandler(BaseHTTPRequestHandler):
 
         inquiries.append(inquiry)
         self.save_inquiries(inquiries)
-        if is_email(contact):
+        if email_opt_in and is_email(contact):
             send_mail(
                 contact,
                 f"[Lost & Found] Inquiry {tracking_code} received",
@@ -638,7 +640,12 @@ class LostAndFoundHandler(BaseHTTPRequestHandler):
             if notes:
                 inquiry["notes"] = notes
         self.save_inquiries(inquiries)
-        if action in {"matched", "resolved"} and inquiry.get("contact") and is_email(inquiry["contact"]):
+        if (
+            action in {"matched", "resolved"}
+            and inquiry.get("contact")
+            and inquiry.get("email_opt_in", True)
+            and is_email(inquiry["contact"])
+        ):
             send_mail(
                 inquiry["contact"],
                 f"[Lost & Found] Inquiry {inquiry.get('code')} {action}",

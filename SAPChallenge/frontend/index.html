@@ -11,7 +11,7 @@
   <div id="app">
     <div class="topbar">
       <div class="topbar-inner">
-        <div class="topbar-title"><span class="sap-mark">SAP</span> (Lost and Found Inventory Directory)</div>
+        <div class="topbar-title"><span class="sap-mark">SAP Lost and Found Directory</span> </div>
         <div style="display:flex; gap:10px; align-items:center;">
           <a class="topbar-btn" href="#submit-section">Submit new request</a>
           <a class="topbar-btn" href="/assistant">Admin</a>
@@ -37,7 +37,7 @@
           <label>Your name</label>
           <input v-model="form.full_name" type="text" placeholder="Full name">
 
-          <label>Contact (email or phone)</label>
+          <label>Email</label>
           <input v-model="form.contact" type="text" placeholder="you@example.com" required>
 
           <label>Phone</label>
@@ -57,6 +57,11 @@
 
           <label>Describe unique details</label>
           <textarea v-model="form.description" placeholder="Stickers, engravings, scratches, stored items" required></textarea>
+
+          <label class="flex" style="gap:10px; align-items:center; margin-top:4px;">
+            <input v-model="form.email_opt_in" type="checkbox">
+            <span>I want to recive email notification</span>
+          </label>
 
           <label>Photo(s)</label>
           <input @change="handleFiles" type="file" multiple>
@@ -131,7 +136,8 @@
           brand: '',
           color: '',
           location_lost: '',
-          description: ''
+          description: '',
+          email_opt_in: true,
         });
         const files = ref([]);
         const submitting = ref(false);
@@ -153,7 +159,7 @@
           submitResult.value = null;
           try {
             const fd = new FormData();
-            Object.entries(form.value).forEach(([k, v]) => fd.append(k, v));
+            Object.entries(form.value).forEach(([k, v]) => fd.append(k, typeof v === 'boolean' ? String(v) : v));
             files.value.forEach((f) => fd.append('photo', f));
             const res = await fetch('/api/inquiries', { method: 'POST', body: fd });
             const data = await res.json();
