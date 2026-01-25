@@ -11,7 +11,7 @@
   <div id="app">
     <div class="topbar">
       <div class="topbar-inner">
-       <div class="topbar-title"><span class="sap-mark">SAP</span> (Lost and Found Inventory Directory)</div>
+       <div class="topbar-title"><span class="sap-mark">SAP Lost and Found Directory</span> </div>
         <div style="display:flex; gap:10px; align-items:center;">
           <a class="topbar-btn" href="/">Submit new request</a>
           <a class="topbar-btn" href="/">Home</a>
@@ -93,6 +93,21 @@
           <p class="muted">Name: {{ selected.full_name || 'N/A' }} | Contact: {{ selected.contact }} | Phone: {{ selected.phone || 'N/A' }}</p>
           <p><strong>Description:</strong> {{ selected.description }}</p>
           <p><strong>Meta:</strong> {{ selected.brand }}, {{ selected.color }}, {{ selected.location_lost }}</p>
+          <div v-if="selected.attachments && selected.attachments.length" class="list">
+            <div class="list-item">
+              <strong>Attachments</strong>
+              <div class="chips" style="margin-top:8px;">
+                <a v-for="fname in selected.attachments" :key="fname" class="chip" :href="`/uploads/${fname}`" target="_blank" rel="noreferrer">
+                  {{ fname }}
+                </a>
+              </div>
+              <div class="flex" style="flex-wrap:wrap; gap:12px; margin-top:10px;">
+                <div v-for="fname in selected.attachments" :key="fname + '-preview'" style="max-width:180px;">
+                  <img :src="`/uploads/${fname}`" alt="attachment" style="width:100%; border-radius:10px; border:1px solid #e2e8f0; object-fit:cover;">
+                </div>
+              </div>
+            </div>
+          </div>
           <div v-if="selected.matches_full && selected.matches_full.length">
             <h4>Curated matches</h4>
             <div class="list">
