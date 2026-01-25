@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Lost & Found matcher</title>
+  <link rel="stylesheet" href="/assets/style.css"/>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-title">SAP (Lost &amp; Found Management Directory)</div>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <a class="topbar-btn" href="#submit-section">Submit new request</a>
+          <a class="topbar-btn" href="/assistant">Admin</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-inner">
+        <h1>Find your lost item faster</h1>
+        <p>Describe it once. We privately match against the hidden catalog and loop in an assistant only when there’s a high-confidence hit.</p>
+      </div>
+    </div>
+
+    <div class="page">
+      <header>
+        <div>
+          <div class="pill">Lost &amp; Found matcher</div>
+          <h1>Submit or track an inquiry</h1>
+        </div>
+        <div class="muted"><a href="/assistant">Assistant</a></div>
+      </header>
+
+    <section class="grid" style="margin-top:18px;">
+      <div class="card" id="submit-section">
+        <h2>Report a lost item</h2>
+        <p class="muted">Describe what went missing. Upload photos if you can. The catalog stays hidden until a match is confirmed.</p>
+        <form @submit.prevent="submitInquiry">
+          <label>Contact (email or phone)</label>
+          <input v-model="form.contact" type="text" placeholder="you@example.com" required>
+
+          <label>Item type</label>
+          <input v-model="form.category" type="text" placeholder="phone, laptop, backpack" required>
+
+          <label>Brand</label>
+          <input v-model="form.brand" type="text" placeholder="Apple, Google, Nike">
+
+          <label>Color</label>
+          <input v-model="form.color" type="text" placeholder="black, maroon, silver">
+
+          <label>Where was it last seen?</label>
+          <input v-model="form.location_lost" type="text" placeholder="Building / floor / room">
+
+          <label>Describe unique details</label>
+          <textarea v-model="form.description" placeholder="Stickers, engravings, scratches, stored items" required></textarea>
+
+          <label>Photo(s)</label>
+          <input @change="handleFiles" type="file" multiple>
+
+          <button type="submit" :disabled="submitting">{{ submitting ? 'Submitting...' : 'Submit inquiry' }}</button>
+        </form>
+        <div v-if="submitError" class="danger" style="margin-top:10px;">{{ submitError }}</div>
+        <div v-if="submitResult" class="banner" style="margin-top:10px;">
+          Tracking code: <strong>{{ submitResult.code }}</strong>
+          <div class="muted">Save this code to track progress.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Track an inquiry</h2>
+        <form @submit.prevent="trackInquiry">
+          <label>Tracking code</label>
+          <input v-model="trackCode" type="text" placeholder="e.g. A1B2C3" required>
+          <button class="secondary" type="submit">Check status</button>
+        </form>
+
+        <div v-if="trackError" class="danger" style="margin-top:10px;">{{ trackError }}</div>
+
+        <div v-if="tracking" class="list" style="margin-top:12px;">
+          <div class="list-item">
+            <strong>Status:</strong> <span class="status" :class="tracking.status">{{ tracking.status }}</span><br>
+            <span class="muted">Submitted {{ tracking.created_at }}</span>
+          </div>
+          <div class="list-item"><strong>Description</strong><br>{{ tracking.description }}</div>
+          <div class="list-item"><strong>Item type</strong>: {{ tracking.category }}</div>
+          <div class="list-item"><strong>Brand</strong>: {{ tracking.brand }}</div>
+          <div class="list-item"><strong>Color</strong>: {{ tracking.color }}</div>
+          <div class="list-item"><strong>Location last seen</strong>: {{ tracking.location_lost }}</div>
+
+          <div v-if="tracking.follow_up_question && tracking.status === 'needs_info'" class="banner">
+            <h3>We need one more detail</h3>
+            <p>{{ tracking.follow_up_question }}</p>
+            <form @submit.prevent="submitFollowUp">
+              <textarea v-model="followUpAnswer" required></textarea>
+              <button type="submit">Submit detail</button>
+            </form>
+          </div>
+
+          <div v-if="tracking.matches && tracking.matches.length" class="list-item">
+            <strong>Curated matches</strong>
+            <div class="list">
+              <div class="list-item" v-for="m in tracking.matches" :key="m.item_id">
+                <div class="flex" style="justify-content: space-between;">
+                  <div>{{ m.name }}</div>
+                  <span class="chip">Confidence {{ m.confidence }}</span>
+                </div>
+                <div class="muted">{{ m.reasons.join('; ') }}</div>
+                <div class="muted">Verify: {{ m.verification_prompt }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </div>
+
+  <script>
+    const { createApp, ref } = Vue;
+    createApp({
+      setup() {
+        const form = ref({
+          contact: '',
+          category: '',
+          brand: '',
+          color: '',
+          location_lost: '',
+          description: ''
+        });
+        const files = ref([]);
+        const submitting = ref(false);
+        const submitResult = ref(null);
+        const submitError = ref('');
+
+        const trackCode = ref('');
+        const tracking = ref(null);
+        const trackError = ref('');
+        const followUpAnswer = ref('');
+
+        const handleFiles = (evt) => {
+          files.value = Array.from(evt.target.files || []);
+        };
+
+        const submitInquiry = async () => {
+          submitting.value = true;
+          submitError.value = '';
+          submitResult.value = null;
+          try {
+            const fd = new FormData();
+            Object.entries(form.value).forEach(([k, v]) => fd.append(k, v));
+            files.value.forEach((f) => fd.append('photo', f));
+            const res = await fetch('/api/inquiries', { method: 'POST', body: fd });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || 'Failed to submit');
+            submitResult.value = data;
+            trackCode.value = data.code;
+          } catch (err) {
+            submitError.value = err.message;
+          } finally {
+            submitting.value = false;
+          }
+        };
+
+        const trackInquiry = async () => {
+          tracking.value = null;
+          trackError.value = '';
+          const code = (trackCode.value || '').trim();
+          if (!code) return;
+          try {
+            const res = await fetch(`/api/inquiries/${encodeURIComponent(code)}`);
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || 'Not found');
+            tracking.value = data;
+            followUpAnswer.value = '';
+          } catch (err) {
+            trackError.value = err.message;
+          }
+        };
+
+        const submitFollowUp = async () => {
+          if (!tracking.value) return;
+          try {
+            const res = await fetch(`/api/inquiries/${tracking.value.code}/follow-up`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ answer: followUpAnswer.value })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || 'Failed to submit detail');
+            await trackInquiry();
+          } catch (err) {
+            trackError.value = err.message;
+          }
+        };
+
+        return {
+          form,
+          files,
+          handleFiles,
+          submitting,
+          submitInquiry,
+          submitResult,
+          submitError,
+          trackCode,
+          trackInquiry,
+          tracking,
+          trackError,
+          followUpAnswer,
+          submitFollowUp
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

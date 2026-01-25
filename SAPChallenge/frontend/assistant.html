@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Assistant console</title>
+  <link rel="stylesheet" href="/assets/style.css"/>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-title">Admin Console</div>
+        <a class="topbar-btn" href="/">Submit new request</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-inner">
+        <h1>Review inquiries</h1>
+        <p>Verify ownership, approve matches, and keep the catalog private.</p>
+      </div>
+    </div>
+
+    <div class="page">
+      <header>
+        <div>
+          <div class="pill">Assistant</div>
+          <h1>Review inquiries</h1>
+        </div>
+        <div class="muted"><a href="/">User view</a></div>
+      </header>
+
+    <section class="grid" style="margin-top:18px;">
+      <div class="card">
+        <h2>Login</h2>
+        <p class="muted">Only authorized assistants can see the catalog.</p>
+        <form @submit.prevent="login">
+          <label>Assistant key</label>
+          <input v-model="key" type="password" required>
+          <button type="submit">Login</button>
+        </form>
+        <div v-if="loginError" class="danger" style="margin-top:8px;">{{ loginError }}</div>
+        <div v-if="authed" class="banner" style="margin-top:8px;">Authenticated</div>
+      </div>
+
+      <div class="card">
+        <h2>Catalog</h2>
+        <div v-if="!authed" class="muted">Login to view.</div>
+        <div v-else>
+          <table class="table">
+            <tr><th>ID</th><th>Name</th><th>Category</th><th>Color</th><th>Found at</th></tr>
+            <tr v-for="item in inventory" :key="item.id">
+              <td>{{ item.id }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.category }}</td>
+              <td>{{ item.color }}</td>
+              <td>{{ item.location_found }}</td>
+            </tr>
+          </table>
+          <h3 style="margin-top:10px;">Add item</h3>
+          <form @submit.prevent="addItem">
+            <input v-model="newItem.id" type="text" placeholder="ID" required>
+            <input v-model="newItem.name" type="text" placeholder="Name" required>
+            <input v-model="newItem.category" type="text" placeholder="Category" required>
+            <input v-model="newItem.brand" type="text" placeholder="Brand">
+            <input v-model="newItem.color" type="text" placeholder="Color">
+            <input v-model="newItem.location_found" type="text" placeholder="Found at">
+            <textarea v-model="newItem.details" placeholder="Details"></textarea>
+            <input v-model="newItem.verification_prompt" type="text" placeholder="Verification prompt">
+            <input v-model="newItem.tags" type="text" placeholder="Tags comma separated">
+            <button type="submit">Add</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:16px;">
+      <h2>Inquiries</h2>
+      <div v-if="!authed" class="muted">Login to view.</div>
+      <div v-else class="grid">
+        <div class="card">
+          <div class="list">
+            <div class="list-item" v-for="inq in inquiries" :key="inq.id" @click="selectInquiry(inq.id)" style="cursor:pointer;">
+              <div class="flex" style="justify-content: space-between;">
+                <div>
+                  <strong>{{ inq.description.slice(0,70) }}</strong><br>
+                  <span class="muted">Code {{ inq.code }}</span>
+                </div>
+                <span class="status" :class="inq.status">{{ inq.status }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" v-if="selected">
+          <h3>Inquiry {{ selected.code }}</h3>
+          <p class="muted">Contact: {{ selected.contact }}</p>
+          <p><strong>Description:</strong> {{ selected.description }}</p>
+          <p><strong>Meta:</strong> {{ selected.brand }}, {{ selected.color }}, {{ selected.location_lost }}</p>
+          <div v-if="selected.matches_full && selected.matches_full.length">
+            <h4>Curated matches</h4>
+            <div class="list">
+              <label v-for="m in selected.matches_full" :key="m.item_id" class="list-item">
+                <input type="radio" name="match" :value="m.item_id" v-model="decision.match_id">
+                {{ m.name }} ({{ m.confidence }}) — {{ m.reasons.join('; ') }}
+                <div class="muted">Verify: {{ m.verification_prompt }}</div>
+              </label>
+            </div>
+          </div>
+          <form @submit.prevent="updateStatus" style="margin-top:10px;">
+            <label>Status</label>
+            <select v-model="decision.action" required>
+              <option value="">-- choose --</option>
+              <option value="matched">Approve match</option>
+              <option value="resolved">Resolved / returned</option>
+              <option value="under_review">Keep reviewing</option>
+            </select>
+            <label>Notes</label>
+            <textarea v-model="decision.notes"></textarea>
+            <button type="submit">Update</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    </div>
+  </div>
+
+  <script>
+    const { createApp, ref } = Vue;
+    createApp({
+      setup() {
+        const key = ref('');
+        const authed = ref(false);
+        const loginError = ref('');
+        const inquiries = ref([]);
+        const selected = ref(null);
+        const inventory = ref([]);
+        const newItem = ref({
+          id: '',
+          name: '',
+          category: '',
+          brand: '',
+          color: '',
+          location_found: '',
+          details: '',
+          verification_prompt: '',
+          tags: ''
+        });
+        const decision = ref({ action: '', match_id: '', notes: '' });
+
+        const login = async () => {
+          loginError.value = '';
+          try {
+            const res = await fetch('/api/assistant/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ key: key.value })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || 'Login failed');
+            authed.value = true;
+            await Promise.all([loadInquiries(), loadInventory()]);
+          } catch (err) {
+            authed.value = false;
+            loginError.value = err.message;
+          }
+        };
+
+        const loadInquiries = async () => {
+          const res = await fetch('/api/assistant/inquiries');
+          if (!res.ok) return;
+          inquiries.value = await res.json();
+        };
+
+        const loadInventory = async () => {
+          const res = await fetch('/api/assistant/inventory');
+          if (!res.ok) return;
+          inventory.value = await res.json();
+        };
+
+        const selectInquiry = async (id) => {
+          const res = await fetch(`/api/assistant/inquiries/${id}`);
+          if (!res.ok) return;
+          selected.value = await res.json();
+          decision.value = { action: selected.value.status, match_id: selected.value.matched_item_id || '', notes: selected.value.notes || '' };
+        };
+
+        const updateStatus = async () => {
+          if (!selected.value) return;
+          const res = await fetch(`/api/assistant/inquiries/${selected.value.id}/status`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(decision.value)
+          });
+          if (res.ok) {
+            await loadInquiries();
+            await selectInquiry(selected.value.id);
+          }
+        };
+
+        const addItem = async () => {
+          const res = await fetch('/api/assistant/inventory', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newItem.value)
+          });
+          if (res.ok) {
+            await loadInventory();
+            newItem.value = { id: '', name: '', category: '', brand: '', color: '', location_found: '', details: '', verification_prompt: '', tags: '' };
+          }
+        };
+
+        return {
+          key,
+          authed,
+          loginError,
+          login,
+          inquiries,
+          selected,
+          selectInquiry,
+          decision,
+          updateStatus,
+          inventory,
+          newItem,
+          addItem
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
