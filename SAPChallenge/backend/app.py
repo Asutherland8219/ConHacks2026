@@ -6,6 +6,8 @@ import json
 import os
 import secrets
 import shutil
+import smtplib
+import ssl
 import tempfile
 import urllib.parse
 from http import cookies
@@ -13,6 +15,7 @@ from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 from typing import Dict, List, Tuple
+from email.message import EmailMessage
 
 
 ROOT = Path(__file__).parent
@@ -21,10 +24,36 @@ UPLOAD_DIR = ROOT / "uploads"
 FRONTEND_DIR = ROOT.parent / "frontend"
 INVENTORY_FILE = DATA_DIR / "inventory.json"
 INQUIRIES_FILE = DATA_DIR / "inquiries.json"
+CONFIG_PATH = ROOT / "config.json"
 
-ASSISTANT_KEY = os.getenv("ASSISTANT_KEY", "assist-key")
+
+def load_config() -> Dict:
+    if not CONFIG_PATH.exists():
+        return {}
+    try:
+        with CONFIG_PATH.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def cfg(key: str, default: str = "") -> str:
+    env_val = os.getenv(key)
+    if env_val not in {None, ""}:
+        return env_val
+    return CONFIG.get(key, default)
+
+
+CONFIG = load_config()
+
+ASSISTANT_KEY = cfg("ASSISTANT_KEY", "assist-key")
 ASSISTANT_TOKEN = hashlib.sha256(ASSISTANT_KEY.encode("utf-8")).hexdigest()
 MAX_CURATED = 8
+SMTP_HOST = cfg("SMTP_HOST", "")
+SMTP_PORT = int(cfg("SMTP_PORT", "0") or 0)
+SMTP_USER = cfg("SMTP_USER", "")
+SMTP_PASS = cfg("SMTP_PASS", "")
+MAIL_FROM = cfg("MAIL_FROM", "")
 
 
 class UploadedFile:
@@ -177,6 +206,47 @@ def follow_up_prompt(match_count: int) -> str:
 def find_inquiry_by_code(inquiries: List[Dict], code: str):
     normalized = code.strip().upper()
     return next((i for i in inquiries if i.get("code", "").upper() == normalized), None)
+
+
+def is_email(value: str) -> bool:
+    return "@" in value and "." in value.split("@")[-1]
+
+
+def smtp_ready() -> bool:
+    return bool(SMTP_HOST and SMTP_PORT and MAIL_FROM)
+
+
+def send_mail(to_addr: str, subject: str, body: str) -> bool:
+    if not smtp_ready() or not is_email(to_addr):
+        return False
+    print(f"[email] attempting to send to {to_addr} via {SMTP_HOST}:{SMTP_PORT}")
+    msg = EmailMessage()
+    msg["From"] = MAIL_FROM
+    msg["To"] = to_addr
+    msg["Subject"] = subject
+    msg.set_content(body)
+    try:
+        context = ssl.create_default_context()
+        if SMTP_PORT == 587:
+            with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as smtp:
+                smtp.ehlo()
+                smtp.starttls(context=context)
+                if SMTP_USER and SMTP_PASS:
+                    smtp.login(SMTP_USER, SMTP_PASS)
+                smtp.send_message(msg)
+        else:
+            with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=context) as smtp:
+                if SMTP_USER and SMTP_PASS:
+                    smtp.login(SMTP_USER, SMTP_PASS)
+                smtp.send_message(msg)
+        return True
+    except Exception as exc:
+        print(f"[email] failed to send: {exc}")
+        return False
+
+
+def current_port() -> int:
+    return int(cfg("PORT", "8000") or 8000)
 
 
 def extract_boundary(content_type: str) -> str:
@@ -417,6 +487,8 @@ class LostAndFoundHandler(BaseHTTPRequestHandler):
     def handle_submit(self) -> None:
         form = parse_request_data(self.headers, self.rfile)
         ensure_files()
+        full_name = form.getfirst("full_name", "").strip()
+        phone = form.getfirst("phone", "").strip()
         contact = form.getfirst("contact", "").strip()
         category = form.getfirst("category", "").strip()
         brand = form.getfirst("brand", "").strip()
@@ -444,6 +516,8 @@ class LostAndFoundHandler(BaseHTTPRequestHandler):
             "id": inquiry_id,
             "code": tracking_code,
             "contact": contact,
+            "full_name": full_name,
+            "phone": phone,
             "category": category,
             "brand": brand,
             "color": color,
@@ -472,6 +546,20 @@ class LostAndFoundHandler(BaseHTTPRequestHandler):
 
         inquiries.append(inquiry)
         self.save_inquiries(inquiries)
+        if is_email(contact):
+            send_mail(
+                contact,
+                f"[Lost & Found] Inquiry {tracking_code} received",
+                (
+                    f"Hello {inquiry.get('full_name') or 'there'},\n\n"
+                    "We received your lost item inquiry and queued it for review.\n"
+                    f"Tracking code: {tracking_code}\n"
+                    f"Current status: {inquiry['status']}\n\n"
+                    f"Track updates here: http://localhost:{current_port()}/track?code={tracking_code}\n\n"
+                    "If you did not request this, you can ignore this email.\n\n"
+                    "— The ConUHacks Lost & Found Team"
+                ),
+            )
         return self.send_json({"code": tracking_code, "status": inquiry["status"]}, status=HTTPStatus.CREATED)
 
     def handle_get_inquiry(self, code: str) -> None:
@@ -481,6 +569,8 @@ class LostAndFoundHandler(BaseHTTPRequestHandler):
             return self.send_json({"error": "not found"}, status=HTTPStatus.NOT_FOUND)
         safe_copy = dict(inquiry)
         safe_copy.pop("contact", None)
+        safe_copy.pop("full_name", None)
+        safe_copy.pop("phone", None)
         return self.send_json(safe_copy)
 
     def handle_follow_up(self, code: str) -> None:
@@ -548,6 +638,19 @@ class LostAndFoundHandler(BaseHTTPRequestHandler):
             if notes:
                 inquiry["notes"] = notes
         self.save_inquiries(inquiries)
+        if action in {"matched", "resolved"} and inquiry.get("contact") and is_email(inquiry["contact"]):
+            send_mail(
+                inquiry["contact"],
+                f"[Lost & Found] Inquiry {inquiry.get('code')} {action}",
+                (
+                    f"Hello {inquiry.get('full_name') or 'there'},\n\n"
+                    f"Your lost item inquiry ({inquiry.get('code')}) is now marked {action}.\n"
+                    f"Notes from the assistant: {notes or 'N/A'}\n\n"
+                    "If this is a match, an assistant will contact you to verify ownership and arrange pickup.\n"
+                    "If you believe this is incorrect, reply to this email.\n\n"
+                    "— The ConUHacks Lost & Found Team"
+                ),
+            )
         return self.send_json({"ok": True})
 
     def handle_inventory_list(self) -> None:
@@ -584,7 +687,7 @@ class LostAndFoundHandler(BaseHTTPRequestHandler):
 
 def run() -> None:
     ensure_files()
-    port = int(os.getenv("PORT", "8000"))
+    port = current_port()
     server = HTTPServer(("", port), LostAndFoundHandler)
     print(f"Lost & Found matcher running on http://localhost:{port}")
     server.serve_forever()

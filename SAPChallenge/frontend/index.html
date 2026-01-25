@@ -11,7 +11,7 @@
   <div id="app">
     <div class="topbar">
       <div class="topbar-inner">
-        <div class="topbar-title">SAP (Lost &amp; Found Management Directory)</div>
+        <div class="topbar-title"><span class="sap-mark">SAP</span> (Lost and Found Inventory Directory)</div>
         <div style="display:flex; gap:10px; align-items:center;">
           <a class="topbar-btn" href="#submit-section">Submit new request</a>
           <a class="topbar-btn" href="/assistant">Admin</a>
@@ -27,21 +27,21 @@
     </div>
 
     <div class="page">
-      <header>
-        <div>
-          <div class="pill">Lost &amp; Found matcher</div>
-          <h1>Submit or track an inquiry</h1>
-        </div>
-        <div class="muted"><a href="/assistant">Assistant</a></div>
-      </header>
+
 
     <section class="grid" style="margin-top:18px;">
       <div class="card" id="submit-section">
         <h2>Report a lost item</h2>
         <p class="muted">Describe what went missing. Upload photos if you can. The catalog stays hidden until a match is confirmed.</p>
         <form @submit.prevent="submitInquiry">
+          <label>Your name</label>
+          <input v-model="form.full_name" type="text" placeholder="Full name">
+
           <label>Contact (email or phone)</label>
           <input v-model="form.contact" type="text" placeholder="you@example.com" required>
+
+          <label>Phone</label>
+          <input v-model="form.phone" type="text" placeholder="+1 555 555 5555">
 
           <label>Item type</label>
           <input v-model="form.category" type="text" placeholder="phone, laptop, backpack" required>
@@ -124,6 +124,8 @@
     createApp({
       setup() {
         const form = ref({
+          full_name: '',
+          phone: '',
           contact: '',
           category: '',
           brand: '',

@@ -13,8 +13,19 @@ ASSISTANT_KEY=your-secret PORT=8000 python3 app.py
 ```
 Then open `http://localhost:8000/` (user) or `http://localhost:8000/assistant` (assistant). The server also serves the frontend files.
 
+### Email setup (SendGrid)
+- Copy `backend/config.example.json` to `backend/config.json` (gitignored) and fill:
+  - `ASSISTANT_KEY`, `PORT`
+  - `SMTP_HOST: smtp.sendgrid.net`
+  - `SMTP_PORT: 587` (or 465)
+  - `SMTP_USER: apikey`
+  - `SMTP_PASS: <full SendGrid API key>`
+  - `MAIL_FROM: <verified sender in SendGrid>`
+- Restart the backend after editing config. The app emails tracking codes and status updates.
+
 ## User flow (frontend/index.html)
 - Submit inquiry with description + optional photos.
+- Include optional name and phone for better contact.
 - Receive a tracking code and track status via the same page.
 - If >5 matches, a follow-up question appears to narrow results.
 

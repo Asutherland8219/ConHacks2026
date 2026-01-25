@@ -11,27 +11,22 @@
   <div id="app">
     <div class="topbar">
       <div class="topbar-inner">
-        <div class="topbar-title">Admin Console</div>
-        <a class="topbar-btn" href="/">Submit new request</a>
+       <div class="topbar-title"><span class="sap-mark">SAP</span> (Lost and Found Inventory Directory)</div>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <a class="topbar-btn" href="/">Submit new request</a>
+          <a class="topbar-btn" href="/">Home</a>
+        </div>
       </div>
     </div>
 
     <div class="hero">
       <div class="hero-inner">
-        <h1>Review inquiries</h1>
+        <h1>Review inquiries (Administrators)</h1>
         <p>Verify ownership, approve matches, and keep the catalog private.</p>
       </div>
     </div>
 
     <div class="page">
-      <header>
-        <div>
-          <div class="pill">Assistant</div>
-          <h1>Review inquiries</h1>
-        </div>
-        <div class="muted"><a href="/">User view</a></div>
-      </header>
-
     <section class="grid" style="margin-top:18px;">
       <div class="card">
         <h2>Login</h2>
@@ -95,7 +90,7 @@
         </div>
         <div class="card" v-if="selected">
           <h3>Inquiry {{ selected.code }}</h3>
-          <p class="muted">Contact: {{ selected.contact }}</p>
+          <p class="muted">Name: {{ selected.full_name || 'N/A' }} | Contact: {{ selected.contact }} | Phone: {{ selected.phone || 'N/A' }}</p>
           <p><strong>Description:</strong> {{ selected.description }}</p>
           <p><strong>Meta:</strong> {{ selected.brand }}, {{ selected.color }}, {{ selected.location_lost }}</p>
           <div v-if="selected.matches_full && selected.matches_full.length">

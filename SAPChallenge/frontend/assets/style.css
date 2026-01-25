@@ -125,15 +125,15 @@ button {
   cursor: pointer;
   font-weight: 700;
   letter-spacing: 0.3px;
-  background: linear-gradient(120deg, var(--accent), #ffb347);
-  color: #0b1021;
-  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.35);
+  background: #0b2d5d;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(11, 45, 93, 0.28);
 }
 
 button.secondary {
-  background: rgba(34, 211, 238, 0.9);
-  color: #04121b;
-  box-shadow: 0 10px 30px rgba(34, 211, 238, 0.25);
+  background: #0b2d5d;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(11, 45, 93, 0.28);
 }
 
 .status {
@@ -239,18 +239,24 @@ button.secondary {
   letter-spacing: -0.3px;
 }
 
+.sap-mark {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
 .topbar-btn {
   padding: 10px 14px;
   border-radius: 10px;
-  border: 1px solid #0f172a;
-  color: #0f172a;
-  background: transparent;
+  border: 1px solid #0b2d5d;
+  color: #ffffff;
+  background: #0b2d5d;
   font-weight: 700;
   text-decoration: none;
 }
 
 .topbar-btn:hover {
-  background: #0f172a;
+  background: #0d3972;
   color: #ffffff;
 }
 

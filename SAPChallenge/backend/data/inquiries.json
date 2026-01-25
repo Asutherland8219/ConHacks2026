@@ -228,5 +228,383 @@
     "fraud_flags": [
       "Same contact used on another inquiry."
     ]
+  },
+  {
+    "id": "7cc4aa0c783bcb52",
+    "code": "A54D09",
+    "contact": "alex@gmail.com",
+    "category": "backpack",
+    "brand": "Nike",
+    "color": "black",
+    "location_lost": "MB2 210",
+    "description": "looks cool",
+    "attachments": [],
+    "created_at": "2026-01-25 02:53 UTC",
+    "status": "under_review",
+    "matches": [
+      {
+        "item_id": "inv-003",
+        "name": "Backpack",
+        "confidence": 0.667,
+        "reasons": [
+          "Shared terms: backpack, black",
+          "Category matches",
+          "Color matches"
+        ],
+        "verification_prompt": "Name one item inside the backpack."
+      },
+      {
+        "item_id": "inv-007",
+        "name": "Pixel 7a",
+        "confidence": 0.125,
+        "reasons": [
+          "Shared terms: black"
+        ],
+        "verification_prompt": "Describe the crack or case."
+      }
+    ],
+    "follow_up_question": "",
+    "follow_up_answer": "",
+    "fraud_flags": [],
+    "matched_item_id": "inv-003",
+    "notes": "I unapproved this!"
+  },
+  {
+    "id": "cc7d2ec0cf0f77a8",
+    "code": "205704",
+    "contact": "s",
+    "category": "s",
+    "brand": "",
+    "color": "",
+    "location_lost": "",
+    "description": "s",
+    "attachments": [],
+    "created_at": "2026-01-25 03:02 UTC",
+    "status": "under_review",
+    "matches": [
+      {
+        "item_id": "inv-004",
+        "name": "AirPods Pro 2",
+        "confidence": 0.125,
+        "reasons": [
+          "Shared terms: s"
+        ],
+        "verification_prompt": "What initials are engraved?"
+      }
+    ],
+    "follow_up_question": "",
+    "follow_up_answer": "",
+    "fraud_flags": []
+  },
+  {
+    "id": "bae9cdaf1359b17b",
+    "code": "DED3E0",
+    "contact": "alber.wesker1899@gmail.com",
+    "category": "phone",
+    "brand": "apple",
+    "color": "black",
+    "location_lost": "",
+    "description": "black",
+    "attachments": [],
+    "created_at": "2026-01-25 03:40 UTC",
+    "status": "under_review",
+    "matches": [
+      {
+        "item_id": "inv-001",
+        "name": "iPhone 13 Pro",
+        "confidence": 0.833,
+        "reasons": [
+          "Shared terms: apple, phone",
+          "Brand matches",
+          "Category matches"
+        ],
+        "verification_prompt": "What sticker or case is on the phone?"
+      },
+      {
+        "item_id": "inv-007",
+        "name": "Pixel 7a",
+        "confidence": 0.5,
+        "reasons": [
+          "Shared terms: black, phone",
+          "Category matches"
+        ],
+        "verification_prompt": "Describe the crack or case."
+      },
+      {
+        "item_id": "inv-002",
+        "name": "MacBook Air M2",
+        "confidence": 0.458,
+        "reasons": [
+          "Shared terms: apple",
+          "Brand matches"
+        ],
+        "verification_prompt": "What is written on the sticky note under the lid?"
+      },
+      {
+        "item_id": "inv-004",
+        "name": "AirPods Pro 2",
+        "confidence": 0.458,
+        "reasons": [
+          "Shared terms: apple",
+          "Brand matches"
+        ],
+        "verification_prompt": "What initials are engraved?"
+      },
+      {
+        "item_id": "inv-003",
+        "name": "Backpack",
+        "confidence": 0.292,
+        "reasons": [
+          "Shared terms: black",
+          "Color matches"
+        ],
+        "verification_prompt": "Name one item inside the backpack."
+      }
+    ],
+    "follow_up_question": "",
+    "follow_up_answer": "",
+    "fraud_flags": [],
+    "matched_item_id": "inv-003",
+    "notes": "done"
+  },
+  {
+    "id": "ad1dae643149397a",
+    "code": "B5BEEF",
+    "contact": "albert.wesker1899@gmail.com",
+    "category": "backpack",
+    "brand": "",
+    "color": "",
+    "location_lost": "",
+    "description": "good",
+    "attachments": [],
+    "created_at": "2026-01-25 03:58 UTC",
+    "status": "matched",
+    "matches": [
+      {
+        "item_id": "inv-003",
+        "name": "Backpack",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: backpack",
+          "Category matches"
+        ],
+        "verification_prompt": "Name one item inside the backpack."
+      }
+    ],
+    "follow_up_question": "",
+    "follow_up_answer": "",
+    "fraud_flags": [],
+    "matched_item_id": "inv-003",
+    "notes": "ok"
+  },
+  {
+    "id": "c9f2cd33f631ceb0",
+    "code": "9E3685",
+    "contact": "albert.wesker1899@gmail.com",
+    "category": "phone",
+    "brand": "",
+    "color": "",
+    "location_lost": "",
+    "description": "looks ok",
+    "attachments": [],
+    "created_at": "2026-01-25 04:01 UTC",
+    "status": "matched",
+    "matches": [
+      {
+        "item_id": "inv-001",
+        "name": "iPhone 13 Pro",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: phone",
+          "Category matches"
+        ],
+        "verification_prompt": "What sticker or case is on the phone?"
+      },
+      {
+        "item_id": "inv-007",
+        "name": "Pixel 7a",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: phone",
+          "Category matches"
+        ],
+        "verification_prompt": "Describe the crack or case."
+      }
+    ],
+    "follow_up_question": "",
+    "follow_up_answer": "",
+    "fraud_flags": [
+      "Same contact used on another inquiry."
+    ],
+    "matched_item_id": "inv-001",
+    "notes": "it's good"
+  },
+  {
+    "id": "c2a0c37c4e766e46",
+    "code": "9A1B17",
+    "contact": "albert.wesker1899@gmail.com",
+    "category": "phone",
+    "brand": "",
+    "color": "",
+    "location_lost": "",
+    "description": "stickerss",
+    "attachments": [],
+    "created_at": "2026-01-25 04:10 UTC",
+    "status": "resolved",
+    "matches": [
+      {
+        "item_id": "inv-001",
+        "name": "iPhone 13 Pro",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: phone",
+          "Category matches"
+        ],
+        "verification_prompt": "What sticker or case is on the phone?"
+      },
+      {
+        "item_id": "inv-007",
+        "name": "Pixel 7a",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: phone",
+          "Category matches"
+        ],
+        "verification_prompt": "Describe the crack or case."
+      }
+    ],
+    "follow_up_question": "",
+    "follow_up_answer": "",
+    "fraud_flags": [
+      "Same contact used on another inquiry.",
+      "Same contact used on another inquiry."
+    ],
+    "matched_item_id": "inv-001",
+    "notes": "Approved"
+  },
+  {
+    "id": "813d6bad86465d36",
+    "code": "89F85C",
+    "contact": "albert.wesker1899@gmail.com",
+    "category": "laptop",
+    "brand": "",
+    "color": "",
+    "location_lost": "",
+    "description": "newnew",
+    "attachments": [],
+    "created_at": "2026-01-25 04:15 UTC",
+    "status": "matched",
+    "matches": [
+      {
+        "item_id": "inv-002",
+        "name": "MacBook Air M2",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: laptop",
+          "Category matches"
+        ],
+        "verification_prompt": "What is written on the sticky note under the lid?"
+      }
+    ],
+    "follow_up_question": "",
+    "follow_up_answer": "",
+    "fraud_flags": [
+      "Same contact used on another inquiry.",
+      "Same contact used on another inquiry.",
+      "Same contact used on another inquiry."
+    ],
+    "matched_item_id": "inv-002",
+    "notes": "amtchhaosdfiasdnfaosdnfa;s"
+  },
+  {
+    "id": "08770c436cac62f0",
+    "code": "FBFDDE",
+    "contact": "alber.wesker1899@gmail.com",
+    "full_name": "albert",
+    "phone": "55555555555",
+    "category": "phone",
+    "brand": "",
+    "color": "",
+    "location_lost": "",
+    "description": "newnewnew",
+    "attachments": [],
+    "created_at": "2026-01-25 04:22 UTC",
+    "status": "matched",
+    "matches": [
+      {
+        "item_id": "inv-001",
+        "name": "iPhone 13 Pro",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: phone",
+          "Category matches"
+        ],
+        "verification_prompt": "What sticker or case is on the phone?"
+      },
+      {
+        "item_id": "inv-007",
+        "name": "Pixel 7a",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: phone",
+          "Category matches"
+        ],
+        "verification_prompt": "Describe the crack or case."
+      }
+    ],
+    "follow_up_question": "",
+    "follow_up_answer": "",
+    "fraud_flags": [
+      "Same contact used on another inquiry."
+    ],
+    "matched_item_id": "inv-001",
+    "notes": "match is approved! the next steps will be communicated to you shortly!"
+  },
+  {
+    "id": "09fc294867e106ed",
+    "code": "D3B6CC",
+    "contact": "albert.wesker1899@gmail.com",
+    "full_name": "albert",
+    "phone": "",
+    "category": "phone",
+    "brand": "",
+    "color": "",
+    "location_lost": "",
+    "description": "hiiiiiiiiiiiiiiiiiiiiiiiiii",
+    "attachments": [],
+    "created_at": "2026-01-25 04:53 UTC",
+    "status": "matched",
+    "matches": [
+      {
+        "item_id": "inv-001",
+        "name": "iPhone 13 Pro",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: phone",
+          "Category matches"
+        ],
+        "verification_prompt": "What sticker or case is on the phone?"
+      },
+      {
+        "item_id": "inv-007",
+        "name": "Pixel 7a",
+        "confidence": 0.375,
+        "reasons": [
+          "Shared terms: phone",
+          "Category matches"
+        ],
+        "verification_prompt": "Describe the crack or case."
+      }
+    ],
+    "follow_up_question": "",
+    "follow_up_answer": "",
+    "fraud_flags": [
+      "Same contact used on another inquiry.",
+      "Same contact used on another inquiry.",
+      "Same contact used on another inquiry.",
+      "Same contact used on another inquiry."
+    ],
+    "matched_item_id": "inv-001",
+    "notes": "approved"
   }
 ]

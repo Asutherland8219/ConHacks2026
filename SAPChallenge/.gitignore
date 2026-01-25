@@ -1,0 +1,8 @@
+# Local config (keep config.example.json tracked)
+backend/config.json
+
+# Runtime data/uploads
+backend/uploads/
+backend/data/inquiries.json
+__pycache__/
+*.pyc
