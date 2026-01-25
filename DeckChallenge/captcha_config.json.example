@@ -1,0 +1,4 @@
+{
+  "method": "ocr",
+  "pytesseract_path": null
+}
