@@ -362,6 +362,7 @@ class AnalystAI(Container):
         self.log_widget.write(f"\n[bold cyan]You:[/ bold cyan] {user_msg}")
         self.send_to_gemini(user_msg)
 
+    @work
     async def analyze_current_selection(self):
         """Triggered explicitly by the user via the Modal."""
         event_data = self.current_event
